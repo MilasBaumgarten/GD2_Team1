@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4779061541666486}
   - component: {fileID: 33991598465201710}
   - component: {fileID: 23392111992357842}
-  - component: {fileID: 64733518145716572}
+  - component: {fileID: 64619465876655758}
   m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4690237918240302}
   - component: {fileID: 33934449121664460}
   - component: {fileID: 23625194433966410}
-  - component: {fileID: 64579677445011672}
+  - component: {fileID: 64236541426276084}
   m_Layer: 0
   m_Name: Plane.002
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1948427277121412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.040017962, y: 1.4849596, z: 4.505647}
+  m_LocalPosition: {x: -6.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4779061541666486}
@@ -116,7 +116,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d0555f6b718b11a498bc7df91d88e8e3, type: 2}
+  - {fileID: 2100000, guid: 9c8babfc08da5f241a849242ba3d6d9f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,15 +173,15 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986449299500510}
-  m_Mesh: {fileID: 4300002, guid: f0f6e23edd2257f4a97a7d92a5e53a7b, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 267876ae6a8feca4aac921a284fdc442, type: 3}
 --- !u!33 &33991598465201710
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1239529505022280}
-  m_Mesh: {fileID: 4300000, guid: f0f6e23edd2257f4a97a7d92a5e53a7b, type: 3}
---- !u!64 &64579677445011672
+  m_Mesh: {fileID: 4300002, guid: 267876ae6a8feca4aac921a284fdc442, type: 3}
+--- !u!64 &64236541426276084
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -194,8 +194,8 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: f0f6e23edd2257f4a97a7d92a5e53a7b, type: 3}
---- !u!64 &64733518145716572
+  m_Mesh: {fileID: 4300000, guid: 267876ae6a8feca4aac921a284fdc442, type: 3}
+--- !u!64 &64619465876655758
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -208,4 +208,4 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f0f6e23edd2257f4a97a7d92a5e53a7b, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 267876ae6a8feca4aac921a284fdc442, type: 3}
