@@ -6,7 +6,7 @@ public class PlayerLook : MonoBehaviour
 {
     [Header("Skript muss auf Spielerobjekt sitzen!")]
     [Tooltip("Kamera des Spielers (Muss Kind-Objekt sein)")]
-    public Camera cam;  //Kamera (First Person) des Spielers
+    public Transform cam;  //Kamera (First Person) des Spielers
 
     [Tooltip("ScriptableObject des Spielers (Asset)")]
     public PlayerScriptableObject player;   //Referenz zum ScriptableObject
