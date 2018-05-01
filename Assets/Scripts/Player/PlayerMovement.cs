@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Rigidbody-Komponente des Spielers")]
     private Rigidbody rb;   //Rigidbody des Spielers
     [SerializeField]
-    private bool isGrounded = false;    //Zustand ob Spieler auf dem Boden steht
-    [SerializeField]
     private bool noClip; //Zustand ob der Spieler sich im NoClip
     [SerializeField]
     private LayerMask mask = 1 << 9;
@@ -34,19 +32,19 @@ public class PlayerMovement : MonoBehaviour
         {   //normaler Bewegungsablauf
             rb.AddForce(moveDirection * (player.maxMoveSpeed - Vector3.Dot(moveDirection, rb.velocity)), ForceMode.Acceleration);  //Spieler mit Forces Bewegen
 
-            if (isGrounded)
+            if (player.isGrounded)
             {
                 Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //ungewünschte seitliche Bewegung berechnen
                 rb.AddForce(slideMovement * slideMovement.magnitude, ForceMode.Acceleration);   //Spieler mit forces bremsen, wenn er auf dem boden steht
             }
 
-            if (Input.GetKey(KeyCode.Space) && isGrounded)  //Springen, wenn der Spieler auf dem boden steht und Springen drückt (Space)
+            if (Input.GetKey(KeyCode.Space) && player.isGrounded)  //Springen, wenn der Spieler auf dem boden steht und Springen drückt (Space)
             {
                 rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
-                isGrounded = false;
+                player.isGrounded = false;
             }
 
-            if (!isGrounded)    //Prüfen ob man sich wieder auf dem Boden befindet
+            if (!player.isGrounded)    //Prüfen ob man sich wieder auf dem Boden befindet
             {
                 GroundCheck();
             }
@@ -106,9 +104,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundCheck()
     {
-        if (Physics.Raycast(this.transform.position, Vector3.down, 1.01f, mask))    // Raycast nach unten um Boden zu finden
+        if (Physics.Raycast(this.transform.position, Vector3.down, 1.001f, mask))    // Raycast nach unten um Boden zu finden
         {
-            isGrounded = true;
+            player.isGrounded = true;
         }
     }
 }
