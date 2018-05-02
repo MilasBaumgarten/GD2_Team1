@@ -6,7 +6,6 @@ public class ShootProjectile : MonoBehaviour {
     [Tooltip("Ammo")]
     public int  maxAmmo = 5;
     public GameObject projectile;
-    public Camera cam;
     public float fireRate = 1f;
 
 	[SerializeField]
@@ -38,13 +37,13 @@ public class ShootProjectile : MonoBehaviour {
     {
 		RaycastHit hit;
 		Vector3 destination;
-		Ray shootDirection = new Ray(cam.transform.position, cam.transform.forward);    // sollte simpler sein als Input.mousePosition
+		Ray shootDirection = new Ray(transform.position, transform.forward);    // sollte simpler sein als Input.mousePosition
 
 		// finde Zielpunkt der Rakete
 		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, mask)) {
 			destination = hit.point;
 		} else {
-			destination = cam.transform.forward * 1000 + cam.transform.position;
+			destination = transform.forward * 1000 + transform.position;
 		}
 
 		// schieße Rakete ab
