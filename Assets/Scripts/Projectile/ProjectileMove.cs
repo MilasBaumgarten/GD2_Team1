@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class ProjectileMove : MonoBehaviour
 {
-
     public float speed;
     public LayerMask layerMask;
+    public Vector3 destination;
+
+    private float distance;
+
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, speed, layerMask))
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        distance = Vector3.Distance(transform.position, destination);
+        if(distance < .01f)                     
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Destroy(gameObject);
+            //Explode
         }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * speed, Color.white);
-        }
-
     }
 }
