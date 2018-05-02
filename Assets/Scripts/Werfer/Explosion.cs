@@ -8,21 +8,13 @@ public class Explosion : MonoBehaviour {
     public float radius;    //Explosionsradius
     public float explosionForce;    //Stärke der Explosionskraft
     public bool destructible;   //Objekt wird/wird nicht zerstört
-    public bool debug;  //soll das Objekt zu Testzwecken dienen
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.E) && debug) //zum testen mit taste E explodieren lassen
-        {
-            Explode();  //Kaboom!
-        }
-	}
+	public float effektLifeTime = 2.0f;
 
     public void Explode()
     {
         GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);   //Partikeleffekt erscheinen lassen
 
-        Destroy(explosion, 2.0f);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
+        Destroy(explosion, effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);   //Alle Collider im Explosionsradius in ein Array
 
