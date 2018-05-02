@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour {
-
-
-
     [Tooltip("Ammo")]
     public int  maxAmmo = 5;
     public GameObject projectile;
-    //public int Range = 100;
     public Camera cam;
-    public RaycastHit hit;
     public float fireRate = 1f;
 
-    private float nextFire = 0.0f;
-    LayerMask mask = ~0;
+	[SerializeField]
+	LayerMask mask;
+
+	private float nextFire = 0.0f;
     private int currentAmmo;
    
 
@@ -39,16 +36,24 @@ public class ShootProjectile : MonoBehaviour {
 
     void Fire()
     {
-        Ray position = cam.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(position,out hit, Mathf.Infinity,mask);
-        Debug.Log(hit.point);
+		RaycastHit hit;
+		Vector3 destination;
+		Ray shootDirection = new Ray(cam.transform.position, cam.transform.forward);    // sollte simpler sein als Input.mousePosition
 
-        GameObject spawn = Instantiate(projectile, transform.position, transform.rotation);
-        spawn.GetComponent<ProjectileMove>().destination = hit.point;
-        Destroy(spawn, 10);
-        currentAmmo--;
-        nextFire = Time.time + fireRate;
-    }
+		// finde Zielpunkt der Rakete
+		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, mask)) {
+			destination = hit.point;
+		} else {
+			destination = cam.transform.forward * 1000 + cam.transform.position;
+		}
+
+		// schieße Rakete ab
+		GameObject spawn = Instantiate(projectile, transform.position, transform.rotation);
+		spawn.GetComponent<ProjectileMove>().destination = destination;
+		Destroy(spawn, 10);
+		currentAmmo--;
+		nextFire = Time.time + fireRate;
+	}
 
     void Reload()
     {

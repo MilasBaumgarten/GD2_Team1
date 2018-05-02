@@ -5,7 +5,6 @@ using UnityEngine;
 public class ProjectileMove : MonoBehaviour
 {
     public float speed;
-    public LayerMask layerMask;
     public Vector3 destination;
 
     private float distance;
@@ -22,10 +21,14 @@ public class ProjectileMove : MonoBehaviour
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
         distance = Vector3.Distance(transform.position, destination);
-        if(distance < .01f)                     
+        if(distance < .01f)
         {
             Destroy(gameObject);
-            //Explode
+			Explode();
         }
     }
+
+	private void Explode() {
+
+	}
 }
