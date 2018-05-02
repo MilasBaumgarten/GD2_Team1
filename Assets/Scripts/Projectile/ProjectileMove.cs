@@ -29,6 +29,6 @@ public class ProjectileMove : MonoBehaviour
     }
 
 	private void Explode() {
-
+		GetComponent<Explosion>().Explode();
 	}
 }
