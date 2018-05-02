@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
 
-    public GameObject explosionEffect;  //Partikeleffekt der Explosion
-    public float radius;    //Explosionsradius
-    public float explosionForce;    //Stärke der Explosionskraft
-    public bool destructible;   //Objekt wird/wird nicht zerstört
-	public float effektLifeTime = 2.0f;
+	public ExplosionScriptableObject explosionObject;
 
     public void Explode()
     {
-        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);   //Partikeleffekt erscheinen lassen
+        GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, transform.rotation);   //Partikeleffekt erscheinen lassen
 
-        Destroy(explosion, effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
+        Destroy(explosion, explosionObject.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);   //Alle Collider im Explosionsradius in ein Array
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionObject.radius);   //Alle Collider im Explosionsradius in ein Array
 
         foreach(Collider hitObject in colliders)    //Auf alle Collider im Array wirken lassen
         {
@@ -30,13 +26,13 @@ public class Explosion : MonoBehaviour {
 
             if (rb != null) //nur wenn ein Rigidbody vorhanden ist
             {
-                rb.AddExplosionForce(explosionForce, transform.position, radius);   //eine Kraft mit der Stärke "explosionForce" auf den Rigidbody wirken lassen (AddExplosionForce übernimmt die Berechnungen)
+                rb.AddExplosionForce(explosionObject.explosionForce, transform.position, explosionObject.radius);   //eine Kraft mit der Stärke "explosionForce" auf den Rigidbody wirken lassen (AddExplosionForce übernimmt die Berechnungen)
             }
         }
 
-        if (destructible)   //soll das Objekt verschwinden oder nicht?
+        /*if (destructible)   //soll das Objekt verschwinden oder nicht?
         {
             Destroy(gameObject);  //lässt das Gameobject am Ende der Explosion verschwinden
-        }
+        }*/
     }
 }
