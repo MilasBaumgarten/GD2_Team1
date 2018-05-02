@@ -58,8 +58,7 @@ Shader "Shader Forge/rocketShader" {
                 float4 _node_3147_var = tex2D(_node_3147,TRANSFORM_TEX(node_6064, _node_3147));
                 float3 emissive = _node_3147_var.rgb;
                 float3 finalColor = emissive;
-                float node_4396 = 3.0;
-                return fixed4(finalColor,pow(_node_3147_var.b,node_4396));
+                return fixed4(finalColor,pow(_node_3147_var.b,3.0));
             }
             ENDCG
         }
