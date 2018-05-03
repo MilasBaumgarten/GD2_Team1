@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour {
-    [Tooltip("Ammo")]
-    public int  maxAmmo = 5;
-    public GameObject projectile;
-    public float fireRate = 1f;
 
+    public ProjectileScriptableObject projectile;
+    
 	[SerializeField]
 	LayerMask mask;
 
@@ -17,7 +15,8 @@ public class ShootProjectile : MonoBehaviour {
 
     void Start()
     {
-        currentAmmo = maxAmmo;
+        //Anfangs volle Munition
+        currentAmmo = projectile.maxAmmo;
     }
 
     void Update ()
@@ -47,15 +46,24 @@ public class ShootProjectile : MonoBehaviour {
 		}
 
 		// schieße Rakete ab
-		GameObject spawn = Instantiate(projectile, transform.position, transform.rotation);
+		GameObject spawn = Instantiate(projectile.rocket, transform.position, transform.rotation);
 		spawn.GetComponent<ProjectileMove>().destination = destination;
-		Destroy(spawn, 10);
-		currentAmmo--;
-		nextFire = Time.time + fireRate;
+
+        // Zerstoerung der nicht auftreffenden Projektile nach 10 Sekunden
+        Destroy(spawn, 10);
+
+        //Munition -1 außer unendlich Munition ist aktiviert
+        if (projectile.infAmmo == false)
+        {
+            currentAmmo--;
+        }
+
+        //Zeit vor erneutem schießen
+		nextFire = Time.time + projectile.fireRate;
 	}
 
     void Reload()
     {
-        currentAmmo = maxAmmo;
+        currentAmmo = projectile.maxAmmo;
     }
 }

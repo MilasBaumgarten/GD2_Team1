@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class ProjectileMove : MonoBehaviour
 {
-    public float speed;
+    public ProjectileScriptableObject projectile;
     public Vector3 destination;
 
     private float distance;
 
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        float step = speed * Time.deltaTime;
+        //Vorwaertsbewegung des Projektils
+        float step = projectile.projectileSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        
+        //Abstandsberechnung zwischen Projektil und Ziel
         distance = Vector3.Distance(transform.position, destination);
+        
+        //Zerstoerung des Projektils kurz vor dem Zielpunkt und Aufruf von Explosion
         if(distance < .01f)
         {
             Destroy(gameObject);
 			Explode();
         }
     }
+
 
 	private void Explode() {
 		GetComponent<Explosion>().Explode();
