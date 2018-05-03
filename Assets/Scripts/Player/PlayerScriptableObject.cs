@@ -23,6 +23,9 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Kraft mit der Der Spieler Springt (beeinflusst Sprunghöhe)")]
     public float jumpForce;
 
+    [Tooltip("Zustand ob Spieler auf dem Boden steht")]
+    public bool isGrounded = false;
+
     [Tooltip("horizontale Geschwindigkeit mit der sich der Spieler im NoClip bewegen soll")]
     public float horizontalNoClipSpeed;
 
