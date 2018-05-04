@@ -11,7 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8980fc5ac350014285dd188e61c78a8, type: 3}
   m_Name: Projectile
   m_EditorClassIdentifier: 
-  rocket: {fileID: 0}
+  rocket: {fileID: 1814147519334300, guid: 3ce0b4514dbb4304283aea513c004321, type: 2}
   maxAmmo: 5
+  infAmmo: 1
   fireRate: 1
   projectileSpeed: 100
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967039

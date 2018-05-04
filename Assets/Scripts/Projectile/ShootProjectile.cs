@@ -5,9 +5,6 @@ using UnityEngine;
 public class ShootProjectile : MonoBehaviour {
 
     public ProjectileScriptableObject projectile;
-    
-	[SerializeField]
-	LayerMask mask;
 
 	private float nextFire = 0.0f;
     private int currentAmmo;
@@ -39,7 +36,7 @@ public class ShootProjectile : MonoBehaviour {
 		Ray shootDirection = new Ray(transform.position, transform.forward);    // sollte simpler sein als Input.mousePosition
 
 		// finde Zielpunkt der Rakete
-		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, mask)) {
+		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, projectile.mask)) {
 			destination = hit.point;
 		} else {
 			destination = transform.forward * 1000 + transform.position;

@@ -17,4 +17,7 @@ public class ProjectileScriptableObject : ScriptableObject {
 
     [Tooltip("Geschwindigkeit des Projektils")]
     public float projectileSpeed = 100.0f;
+
+	[Tooltip("Layer, die von Rakete getroffen werden können")]
+	public LayerMask mask;
 }
