@@ -21,8 +21,8 @@ public class ProjectileMove : MonoBehaviour
         //Zerstoerung des Projektils kurz vor dem Zielpunkt und Aufruf von Explosion
         if(distance < .01f)
         {
-            Destroy(gameObject);
 			Explode();
+            Destroy(gameObject);
         }
     }
 
