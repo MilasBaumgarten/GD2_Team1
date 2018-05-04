@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour {
-    [Tooltip("Ammo")]
-    public int  maxAmmo = 5;
-    public GameObject projectile;
-    public float fireRate = 1f;
 
-	[SerializeField]
-	LayerMask mask;
+    public ProjectileScriptableObject projectile;
 
 	private float nextFire = 0.0f;
     private int currentAmmo;
@@ -17,7 +12,8 @@ public class ShootProjectile : MonoBehaviour {
 
     void Start()
     {
-        currentAmmo = maxAmmo;
+        //Anfangs volle Munition
+        currentAmmo = projectile.maxAmmo;
     }
 
     void Update ()
@@ -40,22 +36,31 @@ public class ShootProjectile : MonoBehaviour {
 		Ray shootDirection = new Ray(transform.position, transform.forward);    // sollte simpler sein als Input.mousePosition
 
 		// finde Zielpunkt der Rakete
-		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, mask)) {
+		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, projectile.mask)) {
 			destination = hit.point;
 		} else {
 			destination = transform.forward * 1000 + transform.position;
 		}
 
 		// schieße Rakete ab
-		GameObject spawn = Instantiate(projectile, transform.position, transform.rotation);
+		GameObject spawn = Instantiate(projectile.rocket, transform.position, transform.rotation);
 		spawn.GetComponent<ProjectileMove>().destination = destination;
-		Destroy(spawn, 10);
-		currentAmmo--;
-		nextFire = Time.time + fireRate;
+
+        // Zerstoerung der nicht auftreffenden Projektile nach 10 Sekunden
+        Destroy(spawn, 10);
+
+        //Munition -1 außer unendlich Munition ist aktiviert
+        if (projectile.infAmmo == false)
+        {
+            currentAmmo--;
+        }
+
+        //Zeit vor erneutem schießen
+		nextFire = Time.time + projectile.fireRate;
 	}
 
     void Reload()
     {
-        currentAmmo = maxAmmo;
+        currentAmmo = projectile.maxAmmo;
     }
 }

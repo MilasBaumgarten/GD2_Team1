@@ -34,4 +34,5 @@ public class PlayerScriptableObject : ScriptableObject
 
     [Tooltip("Geschwindigkeitsmultiplikator fürs schnellere Bewegen im NoClip (Shift links)")]
     public float noClipSprintMultiplier;
+
 }
