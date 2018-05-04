@@ -8,7 +8,7 @@ public class Explosion : MonoBehaviour {
 
     public void Explode()
     {
-        GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, transform.rotation);   //Partikeleffekt erscheinen lassen
+        GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, Quaternion.Euler(0,0,0));// transform.rotation);   //Partikeleffekt erscheinen lassen
 
         Destroy(explosion, explosionObject.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
 

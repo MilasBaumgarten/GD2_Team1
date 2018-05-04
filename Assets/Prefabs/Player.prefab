@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAmmo: 5
-  projectile: {fileID: 1814147519334300, guid: 3ce0b4514dbb4304283aea513c004321, type: 2}
+  projectile: {fileID: 1462264651364398, guid: 46cf416cec417604e88a6976b92faaf4, type: 2}
   fireRate: 0.2
   mask:
     serializedVersion: 2
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ffdd4e364995b4f9b2e42e08d013a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 4373388874836588}
   player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
 --- !u!136 &136915159350766826
 CapsuleCollider:
