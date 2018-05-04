@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (player.isGrounded)
             {
-                Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //ungewünschte seitliche Bewegung berechnen
+                Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //unerwünschte seitliche Bewegung berechnen
                 rb.AddForce(slideMovement * slideMovement.magnitude, ForceMode.Acceleration);   //Spieler mit forces bremsen, wenn er auf dem boden steht
             }
 
@@ -44,14 +44,17 @@ public class PlayerMovement : MonoBehaviour
                 player.isGrounded = false;
             }
 
-            if (!player.isGrounded)    //Prüfen ob man sich wieder auf dem Boden befindet
+            if (!player.isGrounded && rb.velocity.y < 0)    // Spieler beim fallen stärker beschleunigen
             {
-                GroundCheck();
+                rb.AddForce(Vector3.up * Physics.gravity.y * player.fallspeed, ForceMode.Acceleration);
             }
+            GroundCheck();  //prüfen, ob der Spieler sich noch auf dem Boden befindet
+
         }
         else
         {   //Bewegung wenn NoClip aktiv ist
             float multiplier;
+            rb.velocity = Vector3.zero;
 
             if (Input.GetKey(KeyCode.LeftShift))    //Multiplikator erhöhen wenn der Spieler schneller  fliegen möchte (Shift links)
             {
@@ -107,6 +110,10 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(this.transform.position, Vector3.down, 1.001f, mask))    // Raycast nach unten um Boden zu finden
         {
             player.isGrounded = true;
+        }
+        else
+        {
+            player.isGrounded = false;
         }
     }
 }

@@ -14,8 +14,11 @@ MonoBehaviour:
   h_sens: 5
   v_sens: 5
   maxMoveSpeed: 20
-  speed: 0.00000000506523
-  jumpForce: 5
+  speed: 0.00000011570713
+  fallspeed: 1
+  jumpForce: 3
+  isGrounded: 1
   horizontalNoClipSpeed: 0.5
   verticalNoClipSpeed: 0.5
   noClipSprintMultiplier: 2
+  grappleLength: 10
