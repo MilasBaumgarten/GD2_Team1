@@ -20,6 +20,9 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Momentane Geschwindigkeit des Spielers")]
     public float speed;
 
+    [Tooltip("Fallbeschleunigung des Spielers")]
+    public float fallspeed;
+
     [Tooltip("Kraft mit der Der Spieler Springt (beeinflusst Sprunghöhe)")]
     public float jumpForce;
 
@@ -34,4 +37,6 @@ public class PlayerScriptableObject : ScriptableObject
 
     [Tooltip("Geschwindigkeitsmultiplikator fürs schnellere Bewegen im NoClip (Shift links)")]
     public float noClipSprintMultiplier;
+
+    public float grappleLength;
 }
