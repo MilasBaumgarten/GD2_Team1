@@ -1883,7 +1883,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6698,6 +6698,14 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: 2e8e646444ec582438df33a6d4a9851d,
         type: 2}
+    - target: {fileID: 1026904700328262, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590887524123914, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
   m_IsPrefabParent: 0

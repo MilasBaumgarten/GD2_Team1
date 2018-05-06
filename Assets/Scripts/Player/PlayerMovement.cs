@@ -30,13 +30,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (!noClip)
         {   //normaler Bewegungsablauf
-            if (player.isGrounded)
-            {
-                Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //unerwünschte seitliche Bewegung berechnen
-                rb.AddForce(slideMovement * slideMovement.magnitude, ForceMode.Acceleration);   //Spieler mit forces bremsen, wenn er auf dem boden steht
-            }
-
 			if (player.isGrounded){
+				// Spieler anhalten, wenn keine Bewegung erwollt ist
+				if (moveDirection.magnitude == 0){
+					rb.velocity = new Vector3(0,rb.velocity.y,0);
+				}
+
 				// maximale Spielergeschwindigkeit berechnen
 				Vector2 maxVelocity = Vector2.zero;
 
