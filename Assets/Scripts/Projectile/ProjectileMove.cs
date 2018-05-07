@@ -8,7 +8,6 @@ public class ProjectileMove : MonoBehaviour
     public Vector3 destination;
 
     private float distance;
-
     void Update()
     {
         //Vorwaertsbewegung des Projektils
