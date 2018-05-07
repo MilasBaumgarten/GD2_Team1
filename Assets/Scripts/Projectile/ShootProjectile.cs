@@ -8,12 +8,15 @@ public class ShootProjectile : MonoBehaviour {
 
 	private float nextFire = 0.0f;
     private int currentAmmo;
-   
+
+    private GiveAudioSource source;
 
     void Start()
     {
         //Anfangs volle Munition
         currentAmmo = projectile.maxAmmo;
+        //Holt AudioSource
+        source = GetComponent<GiveAudioSource>();
     }
 
     void Update ()
@@ -46,6 +49,9 @@ public class ShootProjectile : MonoBehaviour {
 		GameObject spawn = Instantiate(projectile.rocket, transform.position, transform.rotation);
 		spawn.GetComponent<ProjectileMove>().destination = destination;
 
+        //Spielt Soundeffekt ab
+        source.Play();
+
         // Zerstoerung der nicht auftreffenden Projektile nach 10 Sekunden
         Destroy(spawn, 10);
 
@@ -63,4 +69,5 @@ public class ShootProjectile : MonoBehaviour {
     {
         currentAmmo = projectile.maxAmmo;
     }
+
 }
