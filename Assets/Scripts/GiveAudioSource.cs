@@ -6,6 +6,7 @@ public class GiveAudioSource : MonoBehaviour {
     private AudioSource source;
 
     void Start()
+    void Awake()
     {
         source = GetComponent<AudioSource>();
         //Abspielen beim starten deaktiviert
