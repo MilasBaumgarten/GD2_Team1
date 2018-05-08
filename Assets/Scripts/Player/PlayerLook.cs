@@ -28,11 +28,12 @@ public class PlayerLook : MonoBehaviour
         this.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, this.transform.up);    //Spielermodell bei seitlicher Mausbewegung um eigene Y-Achse drehen (nach links und rechts gucken)
         cam.transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);    //Kamera bei vertikaler Mausbewegung um ihre X-Achse drehen (nach oben und unten gucken)
 
-        if (Input.GetKeyDown(KeyCode.Escape))   //gibt den Cursor bei drücken von "Escape" wieder frei --> gehört auch in GameManager
+        /*if (Input.GetKeyDown(KeyCode.Escape))   //gibt den Cursor bei drücken von "Escape" wieder frei --> gehört auch in GameManager
                                                 //muss nach Menü schließen rückgängig gemacht werden
+                                               
         {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+            Cursor.visible = true; 
+        }*/
     }
 }
