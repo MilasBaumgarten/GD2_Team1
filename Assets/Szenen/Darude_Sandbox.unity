@@ -2866,6 +2866,14 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1590887524123914, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026904700328262, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81908259986571896, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
@@ -6723,7 +6731,7 @@ Prefab:
     - target: {fileID: 2300002, guid: 96fc5e74dfbf301449bf3b5d17dd6805, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4000d69098311fb4692906ace4bb6bbc, type: 2}
+      objectReference: {fileID: 2100000, guid: bafcd1e87a6a18d4494446f828ead416, type: 2}
     - target: {fileID: 2300000, guid: 96fc5e74dfbf301449bf3b5d17dd6805, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
