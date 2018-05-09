@@ -87,7 +87,7 @@ public class DebugDoor : MonoBehaviour
 		float lerpScale = 0.0f;
 		while (lerpScale <= 1){
 			transform.position = Vector3.Lerp(startPosition, startPosition + finalPosition, lerpScale);
-			lerpScale += Time.deltaTime;
+			lerpScale += Time.deltaTime * 0.2f;
 			yield return new WaitForSeconds(0);
 		}
 
