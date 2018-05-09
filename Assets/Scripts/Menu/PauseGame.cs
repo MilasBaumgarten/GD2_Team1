@@ -32,8 +32,8 @@ public class PauseGame : MonoBehaviour {
             //Pause
             Time.timeScale = 0;
 
-            //Musik im Pause Menü aus
-            AudioListener.volume = 0;
+            //Musik im Pause Menü aus, muss noch ueberarbeitet werden -> AudioChannels
+            //AudioListener.volume = 0;
 
             //Maus Frei geben und Anzeigen
             Cursor.lockState = CursorLockMode.None;
@@ -47,8 +47,8 @@ public class PauseGame : MonoBehaviour {
             //Unpause
             Time.timeScale = 1;
 
-            //Musik außerhalb des Pause Menüs an
-            AudioListener.volume = 1;
+            //Musik außerhalb des Pause Menüs an, muss noch ueberarbeitet werden -> AudioChannels
+            //AudioListener.volume = 1;
 
             //Maus wird wieder gelocked und unsichtbar gemacht
             Cursor.lockState = CursorLockMode.Locked;

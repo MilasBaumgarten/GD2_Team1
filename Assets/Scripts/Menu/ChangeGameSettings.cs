@@ -31,13 +31,8 @@ public class ChangeGameSettings : MonoBehaviour {
         movementSpeed.text = string.Format("{0:N2}", player.maxMoveSpeed);
         explosionForce.text = string.Format("{0:N2}", explosion.explosionForce);
         explosionRadius.text = string.Format("{0:N2}", explosion.radius);
-    }
 
-
-    //keine munitionseingabe möglich machen, unendlich munition aktiviert ist
-    private void Update()
-    {
-        if(projectile.infAmmo == true)
+        if (projectile.infAmmo == true)//keine munitionseingabe möglich machen, unendlich munition aktiviert ist
         {
             ammo.interactable = false;
         }
@@ -51,7 +46,7 @@ public class ChangeGameSettings : MonoBehaviour {
     //*****Werte aendern*****
     //***********************
 
-    //Lautstärke anpassen
+    //Lautstärke anpassen, Funktioniert noch nicht bzw. muss noch mit passenden Audiokanaelen umgesetzt werden -> Kanal fuer sfx und musik
     public void setVolume(float value)
     {
         AudioListener.volume = value;
@@ -79,6 +74,16 @@ public class ChangeGameSettings : MonoBehaviour {
     public void setInfAmmo(bool newBool)
     {
         projectile.infAmmo = newBool;
+
+        //keine munitionseingabe möglich machen, unendlich munition aktiviert ist
+        if (projectile.infAmmo == true)
+        {
+            ammo.interactable = false;
+        }
+        else
+        {
+            ammo.interactable = true;
+        }
     }
 
     //Playervariablen
