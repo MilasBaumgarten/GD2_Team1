@@ -5,12 +5,10 @@ using UnityEngine.UI;
 //Dieses Skript ändert die jeweiligen Einstellungsrelevanten Variablen
 public class ChangeGameSettings : MonoBehaviour {
 
-   
-
     public ProjectileScriptableObject projectile;
     public PlayerScriptableObject player;
     public ExplosionScriptableObject explosion;
-
+    
     public InputField projectileSpeed;
     public InputField ammo;
     public InputField fireRate;
@@ -18,11 +16,16 @@ public class ChangeGameSettings : MonoBehaviour {
     public InputField movementSpeed;
     public InputField explosionForce;
     public InputField explosionRadius;
-    
-
+    public Toggle infAmmo;
 
     //Startwerte für die Settings abfragen
     private void Start()
+    {
+        updateSettings();
+    }
+
+    //erzwingt das aktualisieren der Settingstextfelder
+    public void updateSettings()
     {
         projectileSpeed.text = string.Format("{0:N2}", projectile.projectileSpeed);
         ammo.text = string.Format("{0}", projectile.maxAmmo);
@@ -35,10 +38,12 @@ public class ChangeGameSettings : MonoBehaviour {
         if (projectile.infAmmo == true)//keine munitionseingabe möglich machen, unendlich munition aktiviert ist
         {
             ammo.interactable = false;
+            infAmmo.isOn = true;
         }
         else
         {
             ammo.interactable = true;
+            infAmmo.isOn = false;
         }
     }
 
@@ -117,6 +122,4 @@ public class ChangeGameSettings : MonoBehaviour {
         float temp = float.Parse(newText);
         explosion.explosionForce = temp;
     }
-
-
 }
