@@ -21,7 +21,7 @@ public class ShootProjectile : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time > nextFire && Time.timeScale > 0)
         {
             Fire();
         }

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1182952132404886}
+  m_IsPrefabParent: 1
+--- !u!1 &1182952132404886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4872921608289712}
+  - component: {fileID: 114040843341769264}
+  - component: {fileID: 114659017748272722}
+  - component: {fileID: 114468425222204804}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4872921608289712
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182952132404886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 734.6341, y: 365.9063, z: 26.001263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114040843341769264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182952132404886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224d404b62e4c8e4b89a552b6de88180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
+--- !u!114 &114468425222204804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182952132404886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3aa5417b836584b9d4343f39760a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tPlayer: {fileID: 0}
+  projectile: {fileID: 11400000, guid: 5172b3c37ea212041a39338141847a35, type: 2}
+  player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
+  explosion: {fileID: 11400000, guid: 8d7e58e22d641dd4cbb15d440e2acbfe, type: 2}
+--- !u!114 &114659017748272722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182952132404886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1571655b1d85d124297ee3c1c4097581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 11400000, guid: 5172b3c37ea212041a39338141847a35, type: 2}
+  player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
+  explosion: {fileID: 11400000, guid: 8d7e58e22d641dd4cbb15d440e2acbfe, type: 2}
+  projectileSpeed: {fileID: 0}
+  ammo: {fileID: 0}
+  fireRate: {fileID: 0}
+  jumpForce: {fileID: 0}
+  movementSpeed: {fileID: 0}
+  explosionForce: {fileID: 0}
+  explosionRadius: {fileID: 0}
+  infAmmo: {fileID: 0}
