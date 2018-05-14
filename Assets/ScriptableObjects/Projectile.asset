@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: Projectile
   m_EditorClassIdentifier: 
   rocket: {fileID: 1462264651364398, guid: 46cf416cec417604e88a6976b92faaf4, type: 2}
-  maxAmmo: 5
+  maxAmmo: 1000
   infAmmo: 1
-  fireRate: 0.1
+  fireRate: 0.5
   projectileSpeed: 100
   mask:
     serializedVersion: 2

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   h_sens: 5
   v_sens: 5
-  maxMoveSpeed: 5
-  acceleration: 30
+  maxMoveSpeed: 20
+  acceleration: 18
   speed: 0
   airSpeedModifier: 0.5
-  fallspeed: 1
-  jumpForce: 1
+  fallspeed: 10
+  jumpForce: 3
   isGrounded: 1
   horizontalNoClipSpeed: 0.5
   verticalNoClipSpeed: 0.5
