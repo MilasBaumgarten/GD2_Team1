@@ -5,17 +5,17 @@ using UnityEngine;
 public class ProjectileMove : MonoBehaviour
 {
     public ProjectileScriptableObject projectile;
-    public Vector3 destination;
+    public RaycastHit hit;
 
     private float distance;
     void Update()
     {
         //Vorwaertsbewegung des Projektils
         float step = projectile.projectileSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        transform.position = Vector3.MoveTowards(transform.position, hit.point, step);
         
         //Abstandsberechnung zwischen Projektil und Ziel
-        distance = Vector3.Distance(transform.position, destination);
+        distance = Vector3.Distance(transform.position, hit.point);
         
         //Zerstoerung des Projektils kurz vor dem Zielpunkt und Aufruf von Explosion
         if(distance < .01f)
@@ -27,6 +27,7 @@ public class ProjectileMove : MonoBehaviour
 
 
 	private void Explode() {
-		GetComponent<Explosion>().Explode();
+		Debug.Log(Quaternion.LookRotation(hit.normal));
+		GetComponent<Explosion>().Explode(hit);
 	}
 }
