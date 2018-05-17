@@ -27,7 +27,6 @@ public class ProjectileMove : MonoBehaviour
 
 
 	private void Explode() {
-		Debug.Log(Quaternion.LookRotation(hit.normal));
 		GetComponent<Explosion>().Explode(hit);
 	}
 }
