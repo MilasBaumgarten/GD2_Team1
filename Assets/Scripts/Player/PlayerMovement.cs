@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool noClip; //Zustand ob der Spieler sich im NoClip
     [SerializeField]
     private LayerMask mask = 1 << 9;
+    float slowDown = 0.3f;
 
     void Awake()
     {
@@ -34,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (player.isGrounded)
             {
-                Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //unerwünschte seitliche Bewegung berechnen
-                rb.AddForce(slideMovement * slideMovement.magnitude, ForceMode.Acceleration);   //Spieler mit forces bremsen, wenn er auf dem boden steht
+                Vector3 slide = (rb.velocity - Vector3.Project(rb.velocity, moveDirection)); //unerwünschte seitliche Bewegung berechnen
+                //rb.velocity = new Vector3(Mathf.Clamp(Mathf.Abs(rb.velocity.x) - Mathf.Abs(slide.x) * slowDown, moveDirection.x, float.PositiveInfinity), rb.velocity.y, Mathf.Clamp(Mathf.Abs(rb.velocity.z) - Mathf.Abs(slide.z) * slowDown, moveDirection.z, float.PositiveInfinity));
+                rb.velocity -= slide * slowDown;
             }
 
             if (Input.GetKey(KeyCode.Space) && player.isGrounded)  //Springen, wenn der Spieler auf dem boden steht und Springen drückt (Space)
