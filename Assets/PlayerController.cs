@@ -31,9 +31,9 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, 0.0f, Input.GetAxis("Vertical") * moveSpeed);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection = Vector3.ClampMagnitude(moveDirection, moveSpeed);
-        
 
-        if (pushDirection.magnitude < 0.2f)
+
+        if (pushDirection.magnitude < controller.minMoveDistance)
         {
             pushDirection = Vector3.zero;
         }
@@ -52,14 +52,18 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            verticalSpeed += gravity * Time.deltaTime;
-
-            if (controller.velocity.y < 0.0f)
+            if (verticalSpeed < 0.0f)
             {
                 verticalSpeed += gravity * fallMultiplier * Time.deltaTime;
             }
+            else
+            {
+                verticalSpeed += gravity * Time.deltaTime;
+            }
         }
+
         Vector3 move;
+
         if (Vector3.Angle(pushDirection, moveDirection) > 90)
         {
             pushDirection += (moveDirection - pushDirection) * airControlSpeed * Time.deltaTime;
@@ -67,11 +71,18 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            pushDirection += (Vector3.Project(pushDirection, moveDirection.normalized) - pushDirection).normalized * airControlSpeed * Time.deltaTime;
-            move = (pushDirection - Vector3.Project(moveDirection, pushDirection)) + moveDirection;
+            if (pushDirection.magnitude >= moveDirection.magnitude)
+            {
+                pushDirection += (Vector3.Project(pushDirection, moveDirection.normalized) - pushDirection).normalized * airControlSpeed * Time.deltaTime;
+                move = (pushDirection - Vector3.Project(moveDirection, pushDirection)) + moveDirection;
+            }
+            else
+            {
+                move = moveDirection;
+            }
         }
 
-        speed = move.magnitude; //Debug
+        speed = move.magnitude; //Debugwert
         controller.Move(new Vector3(move.x, verticalSpeed, move.z) * Time.deltaTime);
     }
 
