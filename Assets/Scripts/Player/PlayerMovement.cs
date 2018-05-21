@@ -30,13 +30,38 @@ public class PlayerMovement : MonoBehaviour
 
         if (!noClip)
         {   //normaler Bewegungsablauf
-            rb.AddForce(moveDirection * (player.maxMoveSpeed - Vector3.Dot(moveDirection, rb.velocity)), ForceMode.Acceleration);  //Spieler mit Forces Bewegen
+			if (player.isGrounded){
+				// Spieler anhalten, wenn keine Bewegung erwollt ist
+				if (moveDirection.magnitude == 0){
+					rb.velocity = new Vector3(0,rb.velocity.y,0);
+				}
 
-            if (player.isGrounded)
-            {
-                Vector3 slideMovement = Vector3.Project(rb.velocity, moveDirection) - rb.velocity;  //unerwünschte seitliche Bewegung berechnen
-                rb.AddForce(slideMovement * slideMovement.magnitude, ForceMode.Acceleration);   //Spieler mit forces bremsen, wenn er auf dem boden steht
-            }
+				// maximale Spielergeschwindigkeit berechnen
+				Vector2 maxVelocity = Vector2.zero;
+
+				maxVelocity.x = player.maxMoveSpeed * Mathf.Abs(rb.velocity.normalized.x);
+				maxVelocity.y = player.maxMoveSpeed * Mathf.Abs(rb.velocity.normalized.z);
+
+				//Spieler mit Forces Bewegen
+				rb.AddForce(moveDirection * player.acceleration, ForceMode.Acceleration);
+
+				// reduziere Spielergeschwindigkeit auf maximale Geschwindigkeit, wenn Spieler zu schnell
+				rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxVelocity.x, maxVelocity.x),
+										  rb.velocity.y,
+										  Mathf.Clamp(rb.velocity.z, -maxVelocity.y, maxVelocity.y));
+
+			}
+			else{
+				// vertikale Bewegung des Spielers "errechnen"
+				Vector3 verticalVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+				// Winkel zwischen Bewegungsrichtung und EingabeBewegung berechnen
+				float angle = Mathf.Abs(Vector3.Angle(verticalVelocity, moveDirection));
+
+				// Bewege Spieler per Forces in der Luft, falls Richtung != Bewegungsrichtung oder maximale Geschwindigkeit noch nicht erreicht
+				if ((angle >= 45 && angle <= 335) || verticalVelocity.magnitude < player.maxMoveSpeed){
+					rb.AddForce(moveDirection * player.acceleration * player.airSpeedModifier, ForceMode.Acceleration);
+				}
+			}
 
             if (Input.GetKey(KeyCode.Space) && player.isGrounded)  //Springen, wenn der Spieler auf dem boden steht und Springen drückt (Space)
             {
@@ -107,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GroundCheck()
     {
-        if (Physics.Raycast(this.transform.position, Vector3.down, 1.001f, mask))    // Raycast nach unten um Boden zu finden
+        if (Physics.Raycast(this.transform.position, Vector3.down, 1.301f, mask))    // Raycast nach unten um Boden zu finden
         {
             player.isGrounded = true;
         }

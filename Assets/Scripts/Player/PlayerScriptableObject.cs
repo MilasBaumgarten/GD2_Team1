@@ -17,8 +17,15 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Geschwindigkeit mit der sich der Spieler maximal bewegen soll")]
     public float maxMoveSpeed;
 
+	[Tooltip("Beschleunigung des Spielers")]
+    public float acceleration;
+
     [Tooltip("Momentane Geschwindigkeit des Spielers")]
     public float speed;
+
+	[Tooltip("Faktor um den die Spielergeschwindigkeit in der Luft multipliziert wird")]
+	[Range(0, 1.5f)]
+    public float airSpeedModifier;
 
     [Tooltip("Fallbeschleunigung des Spielers")]
     public float fallspeed;
