@@ -25,8 +25,8 @@ public class SaveLoadGame : MonoBehaviour {
         PlayerPrefs.SetInt("maxAmmo", projectile.maxAmmo);
         PlayerPrefs.SetFloat("fireRate", projectile.fireRate);
         PlayerPrefs.SetInt("infAmmo", Convert.ToInt32(projectile.infAmmo));
-        PlayerPrefs.SetFloat("jumpForce", player.jumpForce);
-        PlayerPrefs.SetFloat("maxMovementSpeed", player.maxMoveSpeed);
+        PlayerPrefs.SetFloat("jumpForce", player.jumpSpeed);
+        PlayerPrefs.SetFloat("maxMovementSpeed", player.moveSpeed);
         PlayerPrefs.SetFloat("h_sens", player.h_sens);
         PlayerPrefs.SetFloat("v_sens", player.v_sens);
         PlayerPrefs.SetFloat("explosionForce", explosion.explosionForce);
@@ -45,8 +45,8 @@ public class SaveLoadGame : MonoBehaviour {
         projectile.maxAmmo = PlayerPrefs.GetInt("maxAmmo");
         projectile.fireRate = PlayerPrefs.GetFloat("fireRate");
         projectile.infAmmo = Convert.ToBoolean(PlayerPrefs.GetInt("infAmmo"));
-        player.jumpForce = PlayerPrefs.GetFloat("jumpForce");
-        player.maxMoveSpeed = PlayerPrefs.GetFloat("maxMovementSpeed");
+        player.jumpSpeed = PlayerPrefs.GetFloat("jumpForce");
+        player.moveSpeed = PlayerPrefs.GetFloat("maxMovementSpeed");
         player.h_sens = PlayerPrefs.GetFloat("h_sens");
         player.v_sens = PlayerPrefs.GetFloat("v_sens");
         explosion.explosionForce = PlayerPrefs.GetFloat("explosionForce");
