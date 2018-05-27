@@ -21,7 +21,7 @@ public class ShootProjectile : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time > nextFire)
+        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time > nextFire && Time.timeScale > 0)
         {
             Fire();
         }
@@ -47,7 +47,7 @@ public class ShootProjectile : MonoBehaviour {
 
 		// schieße Rakete ab
 		GameObject spawn = Instantiate(projectile.rocket, transform.position, transform.rotation);
-		spawn.GetComponent<ProjectileMove>().destination = destination;
+		spawn.GetComponent<ProjectileMove>().hit = hit;
 
         //Spielt Soundeffekt ab
         source.Play();

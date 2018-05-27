@@ -6,9 +6,13 @@ public class Explosion : MonoBehaviour {
 
 	public ExplosionScriptableObject explosionObject;
 
-    public void Explode()
+    public void Explode(RaycastHit hit)
     {
-        GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, Quaternion.Euler(0,0,0));// transform.rotation);   //Partikeleffekt erscheinen lassen
+		// berechne Rotation für die Explosion, damit sie immer von der Oberfläche des Aufprallpunktes weggeht
+		Vector3 normal = hit.normal;
+		Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(Vector3.up, normal));	// Normale ist immer oben
+
+		GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, rotation); //Partikeleffekt erscheinen lassen
 
         Destroy(explosion, explosionObject.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
 
