@@ -23,14 +23,23 @@ public class Explosion : MonoBehaviour {
             if(hitObject.tag == "Player")   //wenn der Spieler getroffen wird
             {
                 hitObject.transform.position += Vector3.up * 0.01f; //leicht nach oben versetzen, damit der groundcheck im selben frame nicht stört
-                hitObject.GetComponent<PlayerMovement>().player.isGrounded = false; //nicht mehr grounded (falls er nach oben fliegt, ansonsten wird eh wieder groundcheck ausgeführt)
+                //hitObject.GetComponent<PlayerMovement>().player.isGrounded = false; //nicht mehr grounded (falls er nach oben fliegt, ansonsten wird eh wieder groundcheck ausgeführt)
             }
 
-            Rigidbody rb = hitObject.GetComponent<Rigidbody>(); //Rigidbody (falls vorhanden) nehmen
+            //Rigidbody rb = hitObject.GetComponent<Rigidbody>(); //Rigidbody (falls vorhanden) nehmen
 
-            if (rb != null) //nur wenn ein Rigidbody vorhanden ist
+            //if (rb != null) //nur wenn ein Rigidbody vorhanden ist
+            //{
+            //    Vector3 dist = hitObject.transform.position - explosion.transform.position;
+            //    rb.AddForce(dist.normalized * explosionObject.explosionForce * Mathf.Clamp(1.0f - (dist.magnitude / explosionObject.radius), 0.0f, 1.0f), ForceMode.Impulse);   //eine Kraft mit der Stärke "explosionForce" auf den Rigidbody wirken lassen. Kraft nimmt linear mit der distanz zur explosion ab
+            //}
+
+            PlayerController pc = hitObject.GetComponent<PlayerController>();
+
+            if(pc != null)
             {
-                rb.AddExplosionForce(explosionObject.explosionForce, transform.position, explosionObject.radius);   //eine Kraft mit der Stärke "explosionForce" auf den Rigidbody wirken lassen (AddExplosionForce übernimmt die Berechnungen)
+                Vector3 dist = hitObject.transform.position - explosion.transform.position;
+                pc.Push(dist.normalized * explosionObject.explosionForce * Mathf.Clamp(1.0f - (dist.magnitude / explosionObject.radius), 0.0f, 1.0f));
             }
         }
 
