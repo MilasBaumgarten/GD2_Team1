@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a4ff8ceb41e868842a589e936888e6c0
-timeCreated: 1527509093
+guid: a5b3273b28753fc49b03da76816cf4e7
+timeCreated: 1527534518
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -17,11 +17,6 @@ ModelImporter:
     400006: taubenschlag
     400008: tuerstangen
     400010: "t\xFCr"
-    2000000: CINEMA_4D_Editor
-    2100000: Mat
-    2100002: Mat.1
-    2100004: Mat.2
-    2100006: Mat.3
     2300000: stangen
     2300002: taubenschlag
     2300004: tuerstangen
@@ -34,7 +29,6 @@ ModelImporter:
     4300002: "t\xFCr"
     4300004: taubenschlag
     4300006: stangen
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -106,7 +100,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

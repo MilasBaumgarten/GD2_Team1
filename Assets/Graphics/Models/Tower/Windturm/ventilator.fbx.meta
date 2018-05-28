@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 939f0a178218d24479faf472ef1c5160
-timeCreated: 1527509092
+guid: 0fddd87d1db105243ba2c3b24ca50156
+timeCreated: 1527534515
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -19,12 +19,6 @@ ModelImporter:
     400008: rotor
     400010: "r\xE4der_1"
     400012: //RootNode
-    2000000: CINEMA_4D_Editor
-    2100000: Mat
-    2100002: Mat.1
-    2100004: Mat.2
-    2100006: Mat.3
-    2100008: Mat.4
     2300000: fundament
     2300002: "Geh\xE4use"
     2300004: motor
@@ -40,7 +34,6 @@ ModelImporter:
     4300004: "Geh\xE4use"
     4300006: rotor
     4300008: motor
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -112,7 +105,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

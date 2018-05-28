@@ -1,29 +1,32 @@
 fileFormatVersion: 2
-guid: a2c4ea25de05861468cdc62eb37eccd2
+guid: 60e03f09feed499468a59f32599d885d
 timeCreated: 1527534517
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: cage
-    100002: CINEMA_4D_Editor
-    100004: Cylinder
-    100006: "t\xFCr"
+    100000: 01_Ankerpunkt_Basis
+    100002: 02_Steinhand
+    100004: 03_Armring
+    100006: 04_Kristall
     100008: //RootNode
-    400000: cage
-    400002: CINEMA_4D_Editor
-    400004: Cylinder
-    400006: "t\xFCr"
+    400000: 01_Ankerpunkt_Basis
+    400002: 02_Steinhand
+    400004: 03_Armring
+    400006: 04_Kristall
     400008: //RootNode
-    2300000: cage
-    2300002: Cylinder
-    2300004: "t\xFCr"
-    3300000: cage
-    3300002: Cylinder
-    3300004: "t\xFCr"
-    4300000: Cylinder
-    4300002: cage
-    4300004: "t\xFCr"
+    2300000: 01_Ankerpunkt_Basis
+    2300002: 02_Steinhand
+    2300004: 03_Armring
+    2300006: 04_Kristall
+    3300000: 01_Ankerpunkt_Basis
+    3300002: 02_Steinhand
+    3300004: 03_Armring
+    3300006: 04_Kristall
+    4300000: 04_Kristall
+    4300002: 03_Armring
+    4300004: 02_Steinhand
+    4300006: 01_Ankerpunkt_Basis
   externalObjects: {}
   materials:
     importMaterials: 0
