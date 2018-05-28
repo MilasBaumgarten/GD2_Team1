@@ -1,16 +1,71 @@
 fileFormatVersion: 2
-guid: a85bcb0cd33a9df4b92a88c14202ae3d
-timeCreated: 1526233529
+guid: 792aceeeeec52ac4c8054655681bb9f7
+timeCreated: 1527509091
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pendel
+    100004: zahnrad1_lm
+    100006: zahnrad1_lo
+    100008: zahnrad1_lu
+    100010: zahnrad1_mh
+    100012: zahnrad1_mv
+    100014: zahnrad1_rm
+    100016: zahnrad1_ro
+    100018: zahnrad1_ru
+    100020: zahnrad2
+    100022: Zeiger
     400000: //RootNode
-    2100000: Material
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Brunnen
+    400002: pendel
+    400004: zahnrad1_lm
+    400006: zahnrad1_lo
+    400008: zahnrad1_lu
+    400010: zahnrad1_mh
+    400012: zahnrad1_mv
+    400014: zahnrad1_rm
+    400016: zahnrad1_ro
+    400018: zahnrad1_ru
+    400020: zahnrad2
+    400022: Zeiger
+    2100000: Material.001
+    2100002: Material
+    2100004: Material.002
+    2100006: Material.003
+    2300000: pendel
+    2300002: zahnrad1_lm
+    2300004: zahnrad1_lo
+    2300006: zahnrad1_lu
+    2300008: zahnrad1_mh
+    2300010: zahnrad1_mv
+    2300012: zahnrad1_rm
+    2300014: zahnrad1_ro
+    2300016: zahnrad1_ru
+    2300018: zahnrad2
+    2300020: Zeiger
+    3300000: pendel
+    3300002: zahnrad1_lm
+    3300004: zahnrad1_lo
+    3300006: zahnrad1_lu
+    3300008: zahnrad1_mh
+    3300010: zahnrad1_mv
+    3300012: zahnrad1_rm
+    3300014: zahnrad1_ro
+    3300016: zahnrad1_ru
+    3300018: zahnrad2
+    3300020: Zeiger
+    4300000: zahnrad1_lm
+    4300002: zahnrad1_lu
+    4300004: zahnrad1_lo
+    4300006: zahnrad1_mh
+    4300008: zahnrad1_mv
+    4300010: zahnrad1_ro
+    4300012: zahnrad1_rm
+    4300014: zahnrad1_ru
+    4300016: zahnrad2
+    4300018: Zeiger
+    4300020: pendel
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -44,10 +99,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -82,7 +137,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

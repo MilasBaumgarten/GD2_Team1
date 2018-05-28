@@ -1,16 +1,37 @@
 fileFormatVersion: 2
-guid: e1a4dc09d6102e1468866229da61c412
-timeCreated: 1525625220
+guid: 7b2e7911b8197ad4c895d9c1f2059a0e
+timeCreated: 1527509092
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material.001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: ekig
+    100000: Empty
+    100002: Matrix
+    100004: "Mittels\xE4ule"
+    100006: //RootNode
+    100008: Pfeiler2
+    100010: Verzierung
+    400000: Empty
+    400002: Matrix
+    400004: "Mittels\xE4ule"
+    400006: //RootNode
+    400008: Pfeiler2
+    400010: Verzierung
+    2100000: Matix
+    2100002: "S\xE4ulen"
+    2100004: Pavillon
+    2300000: Matrix
+    2300002: "Mittels\xE4ule"
+    2300004: Pfeiler2
+    2300006: Verzierung
+    3300000: Matrix
+    3300002: "Mittels\xE4ule"
+    3300004: Pfeiler2
+    3300006: Verzierung
+    4300000: Matrix
+    4300002: "Mittels\xE4ule"
+    4300004: Pfeiler2
+    4300006: Verzierung
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -44,10 +65,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -82,7 +103,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d07aa7ac319ae4542b91285e16d5a45a
-timeCreated: 1525625220
+guid: a85bcb0cd33a9df4b92a88c14202ae3d
+timeCreated: 1526233529
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: Material
     2300000: //RootNode
     3300000: //RootNode
-    4300000: halb
+    4300000: Brunnen
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -44,10 +44,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
