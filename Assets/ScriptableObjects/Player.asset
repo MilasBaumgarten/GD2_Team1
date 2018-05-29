@@ -11,14 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1545c43c3637de940bd4e74b69a2395b, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
+  jumpButton: 32
   h_sens: 5
   v_sens: 5
-  maxMoveSpeed: 20
-  speed: 0.00000011570713
-  fallspeed: 1
-  jumpForce: 3
-  isGrounded: 1
-  horizontalNoClipSpeed: 0.5
-  verticalNoClipSpeed: 0.5
+  toggleNoClip: 118
+  noClipSprint: 304
+  noClipAscend: 32
+  noClipDecend: 306
+  allowNoClip: 1
+  moveSpeed: 8
+  speed: 3.8907456
+  fallMultiplier: 1
+  gravityMultiplier: 1.5
+  jumpSpeed: 6
+  slowDownSpeed: 10
+  airControlSpeed: 0.75
+  noClip: 0
+  noClipSpeed: 20
   noClipSprintMultiplier: 2
-  grappleLength: 10
+  grappleLength: 30

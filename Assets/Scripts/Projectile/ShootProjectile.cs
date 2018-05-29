@@ -35,14 +35,14 @@ public class ShootProjectile : MonoBehaviour {
     void Fire()
     {
 		RaycastHit hit;
-		Vector3 destination;
 		Ray shootDirection = new Ray(transform.position, transform.forward);    // sollte simpler sein als Input.mousePosition
 
 		// finde Zielpunkt der Rakete
 		if (Physics.Raycast(shootDirection, out hit, Mathf.Infinity, projectile.mask)) {
-			destination = hit.point;
+			// Ziel gefunden
 		} else {
-			destination = transform.forward * 1000 + transform.position;
+			// Spieler schießt in Leere
+			hit.point = transform.forward * 1000 + transform.position;
 		}
 
 		// schieße Rakete ab

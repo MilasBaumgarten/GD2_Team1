@@ -12,8 +12,7 @@ public class PlayerGrapple : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && grappleTarget != null)   // bei vorhandenem Ziel und Drücken der Taste zum Grapplen wird eingehakt
         {
-            //do something!
-            Debug.Log("grappling " + grappleTarget.name);
+			Debug.Log("Grapple!");
         }
     }
 

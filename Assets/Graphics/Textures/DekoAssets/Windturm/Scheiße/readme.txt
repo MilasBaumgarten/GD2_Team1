@@ -1,0 +1,1 @@
+Es gibt einmal normale Scheiße und einmal Vogelscheiße für die Vielfalt

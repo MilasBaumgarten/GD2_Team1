@@ -30,8 +30,8 @@ public class ChangeGameSettings : MonoBehaviour {
         projectileSpeed.text = string.Format("{0:N2}", projectile.projectileSpeed);
         ammo.text = string.Format("{0}", projectile.maxAmmo);
         fireRate.text = string.Format("{0:N2}", projectile.fireRate);
-        jumpForce.text = string.Format("{0:N2}", player.jumpForce);
-        movementSpeed.text = string.Format("{0:N2}", player.maxMoveSpeed);
+        jumpForce.text = string.Format("{0:N2}", player.jumpSpeed);
+        movementSpeed.text = string.Format("{0:N2}", player.moveSpeed);
         explosionForce.text = string.Format("{0:N2}", explosion.explosionForce);
         explosionRadius.text = string.Format("{0:N2}", explosion.radius);
 
@@ -95,13 +95,13 @@ public class ChangeGameSettings : MonoBehaviour {
     public void setMaxSpeed(string newText)
     {
         float temp = float.Parse(newText);
-        player.maxMoveSpeed = temp;
+        player.moveSpeed = temp;
     }
 
     public void setJumpForce(string newText)
     {
         float temp = float.Parse(newText);
-        player.jumpForce = temp;
+        player.jumpSpeed = temp;
     }
 
     public void setMouseSensitivity (float value)
