@@ -5,7 +5,7 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
 
-    public ExplosionScriptableObject explosionObject;
+    public ExplosionScriptableObject explosion;
 
     public void Explode(RaycastHit hit)
     {
@@ -13,11 +13,11 @@ public class Explosion : MonoBehaviour
 		Vector3 normal = hit.normal;
 		Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(Vector3.up, normal));	// Normale ist immer oben
 
-		GameObject explosion = Instantiate(explosionObject.explosionEffect, transform.position, rotation); //Partikeleffekt erscheinen lassen
+		GameObject instance = Instantiate(explosion.explosionEffect, this.transform.position, rotation); //Partikeleffekt erscheinen lassen
 
-        Destroy(explosion, explosionObject.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
+        Destroy(instance, explosion.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionObject.radius);   //Alle Collider im Explosionsradius in ein Array
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosion.radius);   //Alle Collider im Explosionsradius in ein Array
 
         foreach (Collider hitObject in colliders)    //Auf alle Collider im Array wirken lassen
         {
@@ -27,8 +27,8 @@ public class Explosion : MonoBehaviour
 
                 if (pc != null) //wenn der Player das nötige Script hat
                 {
-                    Vector3 dist = hitObject.transform.position - explosion.transform.position; //Richtung der Bewegung feststellen
-                    pc.Push(dist.normalized * explosionObject.explosionForce * Mathf.Clamp(1.0f - (dist.magnitude / explosionObject.radius), 0.0f, 1.0f)); //Spieler in diese Richtung pushen
+                    Vector3 dist = Camera.main.transform.position - instance.transform.position; //Richtung der Bewegung feststellen
+                    pc.Push(dist.normalized * explosion.explosionForce * Mathf.Pow((1-(dist.magnitude / explosion.radius)), explosion.dropOff)); //Spieler in diese Richtung pushen
                 }
             }
         }

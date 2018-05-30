@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 1401962135289198, guid: 3b4da99e093a43244ad895ff36857674,
     type: 2}
-  radius: 5
   explosionForce: 30
+  radius: 10
+  dropOff: 2
   effektLifeTime: 2
