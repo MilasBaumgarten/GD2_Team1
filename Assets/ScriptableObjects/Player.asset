@@ -30,9 +30,9 @@ MonoBehaviour:
   jumpSpeed: 10
   slowDownSpeed: 40
   airControlSpeed: 2
-  noClip: 0
+  noClip: 1
   noClipSpeed: 20
   noClipSprintMultiplier: 2
-  grappleDistance: 10
-  isGrappled: 1
+  grappleDistance: 30
+  isGrappled: 0
   grappleTarget: {fileID: 0}

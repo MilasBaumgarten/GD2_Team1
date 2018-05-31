@@ -17,14 +17,17 @@ public class PlayerGrapple : MonoBehaviour
     {
         if (Input.GetKeyDown(player.grappleButton))   // bei vorhandenem Ziel und Drücken der Taste zum Grapplen wird eingehakt
         {
-            if(player.grappleTarget != null)
+            if (player.isGrappled)
             {
-                player.isGrappled = true;
+                player.isGrappled = false;
             }
             else
             {
-                player.isGrappled = false;
-                player.grappleTarget = null;
+                if (player.grappleIndicator.activeSelf)
+                {
+                    player.isGrappled = true;
+                    player.anchorPosition = player.grappleTarget.transform.position;
+                }
             }
         }
     }

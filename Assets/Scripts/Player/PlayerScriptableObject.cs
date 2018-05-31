@@ -107,6 +107,9 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Geschwindigkeit mit der der Spieler seine Bewegungsrichtung in der Luft ändern kann")]
     public float airControlSpeed;
 
+    public float grappleDistance;
+
+    public bool isGrappled;
     [Space]
 
     #region NoClip Bewegung
@@ -128,8 +131,19 @@ public class PlayerScriptableObject : ScriptableObject
     #region Sonstige
     [Header("Sonstige")]
 
-    public float grappleDistance;
-    public bool isGrappled;
+    [Space]
+
+    #region Objekte und Vektoren
+    [Header("Objekte und Vektoren")]
+
+    [Tooltip("Ankerpunkt der Anvisiert wird (do not edit)")]
     public GameObject grappleTarget;
+
+    [Tooltip("Grapple-Icon im Canvas (do not edit)")]
+    public GameObject grappleIndicator;
+
+    [Tooltip("Position des gegriffenen Ankerpunkts (do not edit)")]
+    public Vector3 anchorPosition;
+    #endregion
     #endregion
 }

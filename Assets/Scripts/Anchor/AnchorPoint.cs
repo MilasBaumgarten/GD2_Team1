@@ -6,8 +6,6 @@ public class AnchorPoint : MonoBehaviour
 {
     public PlayerScriptableObject player; //Das PlayerScriptableObject halt
     private GameObject playerObject; //Das GameObject des Spielers
-    public GameObject indicator;    // Prefab für das Icon
-    private GameObject indicatorInstance;   // gespawnte instanz des Icons
     private bool active;    // Zustand, ob das Icon aktiv ist
 
     private void Start()
@@ -22,6 +20,7 @@ public class AnchorPoint : MonoBehaviour
         {
             ActivateAnchor();
         }
+        
     }
 
     private void OnMouseOver()
@@ -53,14 +52,15 @@ public class AnchorPoint : MonoBehaviour
     private void ActivateAnchor()   // aktiviert, bzw. erzeugt ein Icon im Canvas
     {
         active = true;
-        player.grappleTarget = this.gameObject;  // PlayerGrapple mitteilen, dass dieser Ankerpunkt anvisiert wird
-        indicatorInstance = Instantiate(indicator); // Icon spawnen lassen
+        player.grappleIndicator.SetActive(true); // Icon aktivieren
+        player.grappleTarget = this.gameObject;
     }
 
     private void DisableAnchor()
     {
         active = false;
-        Destroy(indicatorInstance); // Icon entfernen
+        player.grappleIndicator.SetActive(false); // Icon deaktivieren
+        player.grappleTarget = null;
     }
 
     private bool DistanceCheck()    // prüft die Distanz zwischen Ankerpunkt und Spieler
