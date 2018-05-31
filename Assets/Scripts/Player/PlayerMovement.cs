@@ -8,95 +8,116 @@ public class PlayerMovement : MonoBehaviour
     public PlayerScriptableObject player;   //Referenz zum PlayerScriptableObject
     private CharacterController controller; //Referenz zum CharacterController
 
-    private float verticalSpeed;    //Vertikale geschwindingkeit des Spielers
-    private Vector3 pushDirection;  //Kraft und Richtung von äußeren einwirkungen auf den Spieler (z.B. Explosionen)
+    private Vector3 velocity;   //Vektor mit dem bewegt wird
+    private Vector3 inputDirection; //Inputvektor des Spielers
 
     void Start()
     {
         controller = GetComponent<CharacterController>();   //CharacterController initialisieren
+        inputDirection = Vector3.zero; //Initialisierung
+        player.noClip = false;  //player soll nicht mit NoClip starten
     }
 
     void Update()
     {
-        Vector3 move;   //Vektor mit dem bewegt wird
-
+        #region NoClipToggle
         if (Input.GetKeyDown(player.toggleNoClip))  //NoClip Ein-/Ausschalten
         {
             ToggleNoClip();
         }
+        #endregion
 
+        #region Input
+        inputDirection.z = (Input.GetKey(player.forwardButton) ? 1 : 0) + (Input.GetKey(player.backwardButton) ? -1 : 0);   //vorwärts/rückwärts
+        inputDirection.x = (Input.GetKey(player.rightButton) ? 1 : 0) + (Input.GetKey(player.leftButton) ? -1 : 0); //links/rechts
+        inputDirection = transform.TransformDirection(inputDirection).normalized;   //auf Worldspace-Koordinaten anpassen und normalisieren
+        #endregion
+
+        #region NoClip
         if (player.noClip)  //Bewegung, wenn der Spieler im NoClip ist
         {
-            move = new Vector3(Input.GetAxis("Horizontal") * player.noClipSpeed, 0.0f, Input.GetAxis("Vertical") * player.noClipSpeed); //Inputrichtung bestimmen
-            move = transform.TransformDirection(move);  //auf Worldspace ändern
-            move = Vector3.ClampMagnitude(move, player.noClipSpeed);    //Geschwindigkeit auf noClipSpeed begrenzen
-
-            move.y = (Input.GetKey(player.noClipAscend) ? 1 : 0) * player.noClipSpeed + (Input.GetKey(player.noClipDecend) ? -1 : 0) * player.noClipSpeed;  //vertikale Geschwindigkeit bestimmen
-
-            if (Input.GetKey(player.noClipSprint))  //sprintet der Spieler?
-            {
-                move *= player.noClipSprintMultiplier;  //wenn ja den move-Vektor mit dem Multiplikator multiplizieren
-            }
-            transform.position += move * Time.deltaTime;    //Spieler bewegen
+            inputDirection.y = (Input.GetKey(player.noClipAscend) ? 1 : 0) + (Input.GetKey(player.noClipDecend) ? -1 : 0);  //hoch/runter
+            velocity = inputDirection * player.noClipSpeed * (Input.GetKey(player.noClipSprint) ? player.noClipSprintMultiplier : 1); //Bewegungsgeschwindigkeit berechnen
+            transform.position += velocity * Time.deltaTime;    //Spieler bewegen
         }
+        #endregion
+        #region Normal Movement
         else
         {
-            Vector3 moveDirection;  //temporärer Vektor für die Bewegungsrichtung
-            moveDirection = new Vector3(Input.GetAxis("Horizontal") * player.moveSpeed, 0.0f, Input.GetAxis("Vertical") * player.moveSpeed);    //Inputrichtung bestimmen
-            moveDirection = transform.TransformDirection(moveDirection);    //auf Worldspäce ändern
-            moveDirection = Vector3.ClampMagnitude(moveDirection, player.moveSpeed);    //Geschwindigkeit auf moveSpeed begrenzen
-
-            if (pushDirection.magnitude < controller.minMoveDistance)   //pushDirection auf 0 setzen wenn sie unter minMoveDistance fällt
-            {
-                pushDirection = Vector3.zero;
-            }
-
+            CeilingCheck(); //are we Bonking our head?
+            inputDirection *= player.moveSpeed; //Input and moveSpeed anpassen
             float gravity = Physics.gravity.y * player.gravityMultiplier;   //derzeit wirkende Fallbeschleunigung berechnen
 
             if (controller.isGrounded)  //Spieler steht auf dem Boden
             {
-                if (Input.GetKey(player.jumpButton))    //bei Drücken der Sprungtaste springen
+                if (velocity.y < gravity * Time.deltaTime)   //Spieler ist mit hoher Vertikalgeschwindigkeit auf dem boden aufgekommen
                 {
-                    verticalSpeed = player.jumpSpeed;
+                    velocity.y = gravity * Time.deltaTime;  //Geschwindigkeit zurücksetzen
                 }
-                else    //ansonsten Fallbeschleunigung wirken lassen
+                if (inputDirection.Equals(Vector3.zero))    //Spieler macht keinen Input
                 {
-                    verticalSpeed = gravity * Time.deltaTime;   
-                }
-                pushDirection -= pushDirection * player.slowDownSpeed * Time.deltaTime; //Bewegung durch externe einflüsse am Boden abbremsen
-            }
-            else    //Spieler befindet sich nicht auf dem Boden
-            {
-                if (verticalSpeed < 0.0f)   //Spieler steigt
-                {
-                    verticalSpeed += gravity * player.fallMultiplier * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung mit Multiplikator abziehen
-                }
-                else    //Spieler fällt
-                {
-                    verticalSpeed += gravity * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung ohne Multiplikator abziehen
-                }
-            }
-
-            if (Vector3.Angle(pushDirection, moveDirection) > 90)   //Spieler bewegt sich entgegengesetzt der pushDirection
-            {
-                pushDirection += (moveDirection - pushDirection) * player.airControlSpeed * Time.deltaTime; //moveDirection von pushDirection abziehen
-                move = pushDirection + moveDirection;   //Bewegungsrichtung ist pushDirection + moveDirection
-            }
-            else    //Spieler bewegt sich in Richtung der pushDirection
-            {
-                if (pushDirection.magnitude >= moveDirection.magnitude) //pushDirection ist stärker als moveDirection
-                {
-                    pushDirection += (Vector3.Project(pushDirection, moveDirection) - pushDirection).normalized * player.airControlSpeed * Time.deltaTime;  //moveDirection der pushDirection entgegenwirken lassen
-                    move = (pushDirection - Vector3.Project(moveDirection, pushDirection)) + moveDirection; //Bewegungsrichtung berechnen (könnte besser sein aber ich weis nicht wie (╯°□°）╯︵ ┻━┻ )
+                    velocity -= velocity.normalized * player.slowDownSpeed * Time.deltaTime;    //Geschwindigkeit linear verringern
                 }
                 else
                 {
-                    move = moveDirection;   //Bewegungsrichtung ist moveDirection ¯\_(ツ)_/¯
+                    velocity = Vector3.ClampMagnitude(velocity + inputDirection, player.moveSpeed); //Geschwindigkeit gleicht dem Input des Spielers
+                }
+                if (Input.GetKey(player.jumpButton))    //bei Drücken der Sprungtaste springen
+                {
+                    velocity.y = player.jumpSpeed;  //boing~
                 }
             }
-            player.speed = move.magnitude; //Debugwert
-            controller.Move(new Vector3(move.x, verticalSpeed, move.z) * Time.deltaTime);   //Spieler Bewegen
+            else    //Spieler befindet sich nicht auf dem Boden
+            {
+                if (velocity.y < 0.0f)   //Spieler steigt
+                {
+                    velocity.y += gravity * player.fallMultiplier * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung mit Multiplikator abziehen
+                }
+                else    //Spieler fällt
+                {
+                    velocity.y += gravity * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung ohne Multiplikator abziehen
+                }
+                if (!inputDirection.Equals(Vector3.zero))   //Spieler macht Input
+                {
+                    Vector3 temp = Vector3.ProjectOnPlane(velocity, Vector3.up);    //velocity auf x-z-Ebene projeziert, um y-komponente loszuwerden (╯°□°）╯︵ ┻━┻
+                    Vector3 projection;
+
+                    if (Vector3.Angle(temp, inputDirection) < 90)
+                    {
+                        projection = Vector3.Project(temp, inputDirection).normalized * temp.magnitude; //temp auf inputDirection projeziert; länge von temp
+                    }
+                    else
+                    {
+                        projection = inputDirection;    //keine projektion nötig :)
+                    }
+                    if (projection.magnitude > player.moveSpeed)    //vektoren zeigen in selbe hemisphäre
+                    {
+                        Vector3 vecTempProj = (projection - temp);  //Verbindungsvektor von temp zu projection
+                        Vector3 tempPerp = Vector3.Cross(temp, Vector3.up).normalized * vecTempProj.magnitude; //Senkrechter Vektor auf temp; länge von vecTempProj
+                        Vector3 dir = (vecTempProj + tempPerp) * 0.5f;  //das mittel zwischen vecTempProj; halbiert, um die länge beizubehalten
+                        temp += dir * player.airControlSpeed * Time.deltaTime;  //neues temp berechnen
+                    }
+                    else
+                    {
+                        temp += (inputDirection - temp) * player.airControlSpeed * Time.deltaTime;  //temp in richtung input erhöhen
+                    }
+                    velocity = new Vector3(temp.x, velocity.y, temp.z); //neue Bewegungsgeschwindigkeit berechnen
+                }
+            }
+            //if (player.isGrappled && player.grappleTarget != null)  //WIP
+            //{
+            //    Vector3 testPosition = this.transform.position + velocity * Time.deltaTime;
+
+            //    if ((player.grappleTarget.transform.position - this.transform.position).magnitude > player.grappleDistance)
+            //    {
+            //        testPosition = Vector3.ClampMagnitude(testPosition, player.grappleDistance);
+            //        velocity = Vector3.RotateTowards(velocity, testPosition - this.transform.position, 360.0f, 100f);
+            //        velocity = Vector3.RotateTowards(velocity, testPosition - this.transform.position, 360.0f, 100f);
+            //    }
+            //}
+            controller.Move(velocity * Time.deltaTime);   //Spieler Bewegen
         }
+        #endregion
     }
 
     private void ToggleNoClip() //Schaltet zwischen NoClip und normaler bewegung um
@@ -105,19 +126,27 @@ public class PlayerMovement : MonoBehaviour
         {
             player.noClip = false;
             controller.enabled = true;
+            inputDirection = Vector3.zero;
         }
         else
         {
             player.noClip = true;
-            verticalSpeed = 0.0f;
+            velocity.y = 0.0f;
             controller.enabled = false;
+        }
+    }
+
+    private void CeilingCheck() //Schaut nach ob sich etwas über dem Spieler befindet
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(this.transform.position, Vector3.up, out hit, controller.height / 2 + 0.005f) && velocity.y > 0) //bonks his head
+        {
+            velocity.y = 0.0f;   //oof
         }
     }
 
     public void Push(Vector3 dir)   //Externe Einwirkungen entgegennehmen
     {
-        pushDirection.x += dir.x;
-        pushDirection.z += dir.z;
-        verticalSpeed += dir.y;
+        velocity += dir;
     }
 }

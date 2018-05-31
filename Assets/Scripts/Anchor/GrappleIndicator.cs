@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GrappleIndicator : MonoBehaviour
 {
-
-    private GameObject target;  // der Ankerpunkt/Haken
+    public PlayerScriptableObject player;
     private Camera cam; // Kamera des Spielers
 
     void Start()
@@ -17,11 +16,7 @@ public class GrappleIndicator : MonoBehaviour
 
     void Update()
     {
-        transform.position = cam.WorldToScreenPoint(target.transform.position); // das Icon auf dem Canvas entsprechend der position des Ankerpunkts/Hakens verschieben
+        transform.position = cam.WorldToScreenPoint(player.grappleTarget.transform.position); // das Icon auf dem Canvas entsprechend der position des Ankerpunkts/Hakens verschieben
     }
 
-    public void setTarget(GameObject target)
-    {
-        this.target = target;
-    }
 }

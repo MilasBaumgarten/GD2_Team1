@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169903964225ace40aea78034d2d5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
   indicator: {fileID: 1854908026919178, guid: 143ef28abc90e134db3b267c253e7122, type: 2}
 --- !u!114 &114501732899287644
 MonoBehaviour:
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169903964225ace40aea78034d2d5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
   indicator: {fileID: 1854908026919178, guid: 143ef28abc90e134db3b267c253e7122, type: 2}
 --- !u!135 &135609833415429262
 SphereCollider:
@@ -144,7 +146,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1966073678479750}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.06

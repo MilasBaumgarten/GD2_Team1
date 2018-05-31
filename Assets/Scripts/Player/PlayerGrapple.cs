@@ -6,23 +6,26 @@ public class PlayerGrapple : MonoBehaviour
 {
 
     public PlayerScriptableObject player;   // ScriptableObject vom Spieler (duh)
-    private GameObject grappleTarget;   // der anvisierte Ankerpunkt
+
+    private void Start()
+    {
+        player.isGrappled = false;
+        player.grappleTarget = null;
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && grappleTarget != null)   // bei vorhandenem Ziel und Drücken der Taste zum Grapplen wird eingehakt
+        if (Input.GetKeyDown(player.grappleButton))   // bei vorhandenem Ziel und Drücken der Taste zum Grapplen wird eingehakt
         {
-			Debug.Log("Grapple!");
+            if(player.grappleTarget != null)
+            {
+                player.isGrappled = true;
+            }
+            else
+            {
+                player.isGrappled = false;
+                player.grappleTarget = null;
+            }
         }
-    }
-
-    public void setGrappleTarget(GameObject target)
-    {
-        grappleTarget = target;
-    }
-
-    public GameObject getGrappleTarget()
-    {
-        return grappleTarget;
     }
 }

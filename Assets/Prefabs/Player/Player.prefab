@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1599857816792538
 GameObject:
   m_ObjectHideFlags: 1
@@ -157,8 +157,8 @@ GameObject:
   - component: {fileID: 23046693625160228}
   - component: {fileID: 114814438375107240}
   - component: {fileID: 114421709001623100}
-  - component: {fileID: 114437214038153670}
   - component: {fileID: 143999573106320020}
+  - component: {fileID: 114660801661165858}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 114843464837040698}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,13 +244,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590887524123914}
-  m_LocalRotation: {x: 0.087016635, y: -0.006130426, z: -0.7230646, w: 0.68525046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8603, y: -0.377, z: 2.014}
-  m_LocalScale: {x: 0.31813306, y: 0.3180781, z: 0.23015665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4745747305672104}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 6.3380003, y: -7.7620006, z: -93.507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4740126720446036
 Transform:
   m_ObjectHideFlags: 1
@@ -258,7 +258,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1641677196015894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.72, y: 2.29, z: -7.85}
+  m_LocalPosition: {x: 304.5, y: 10.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4745747305672104}
@@ -626,7 +626,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -706,7 +706,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
---- !u!114 &114437214038153670
+--- !u!114 &114660801661165858
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1641677196015894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b92348f20ce601e409c5cb8477a621b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b3dd24c1f54b5a4f9d1654a135acfe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
@@ -834,7 +834,7 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.001
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212602647623354840
 SpriteRenderer:
