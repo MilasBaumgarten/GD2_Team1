@@ -31,7 +31,7 @@ public class ResetModel : EditorWindow {
 			
 			// reset Transform
 			foreach(GameObject o in models){
-				o.transform.position = Vector3.zero;
+				o.transform.position = o.transform.parent.transform.position;
 			}
 		}
 	}
