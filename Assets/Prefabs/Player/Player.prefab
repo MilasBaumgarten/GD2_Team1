@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1079895202559572
 GameObject:
   m_ObjectHideFlags: 1
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33994114498878424}
   - component: {fileID: 23912863208144100}
   m_Layer: 10
-  m_Name: Arm_final
+  m_Name: Modell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,6 +73,21 @@ GameObject:
   - component: {fileID: 23000939371204282}
   m_Layer: 10
   m_Name: Cylinder.005
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1460168372193514
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4032178040913394}
+  m_Layer: 10
+  m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,6 +198,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4032178040913394
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460168372193514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9970093, y: -0.375, z: 0.17999268}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4707487965366526}
+  - {fileID: 4532786115562980}
+  m_Father: {fileID: 4745747305672104}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4154097294244564
 Transform:
   m_ObjectHideFlags: 1
@@ -230,26 +260,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225358974759514}
   m_LocalRotation: {x: -0.46599427, y: -0.51386213, z: -0.5318358, w: 0.48574245}
-  m_LocalPosition: {x: 0.997, y: -0.375, z: 0.512}
-  m_LocalScale: {x: 23.31, y: 30.2, z: 34.41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10.46, y: 30.199997, z: 34.41}
   m_Children:
   - {fileID: 4980893688396672}
   - {fileID: 4182600486758018}
-  m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -87.836006, y: -5.387, z: -90.00001}
+  m_Father: {fileID: 4032178040913394}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4707487965366526
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590887524123914}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8603, y: -0.377, z: 2.014}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.068, y: 0.024, z: 0.6700134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 4
+  m_Father: {fileID: 4032178040913394}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4740126720446036
 Transform:
@@ -258,7 +288,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1641677196015894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304.5, y: 10.73, z: 0}
+  m_LocalPosition: {x: 304, y: 40, z: 138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4745747305672104}
@@ -278,8 +308,7 @@ Transform:
   - {fileID: 4833186670059808}
   - {fileID: 4274400781228222}
   - {fileID: 4154097294244564}
-  - {fileID: 4532786115562980}
-  - {fileID: 4707487965366526}
+  - {fileID: 4032178040913394}
   m_Father: {fileID: 4740126720446036}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -340,7 +369,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 5
-  field of view: 60
+  field of view: 110.4
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -648,7 +677,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7064465d5b9ebd64c959ee768320277d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d47e65f58f1d82741aff7bb6f23481a1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

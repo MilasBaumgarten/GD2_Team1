@@ -24,15 +24,15 @@ MonoBehaviour:
   jumpButton: 32
   grappleButton: 101
   allowNoClip: 1
-  moveSpeed: 8
+  moveSpeed: 10
   fallMultiplier: 1
   gravityMultiplier: 1.5
-  jumpSpeed: 10
+  jumpSpeed: 8
   slowDownSpeed: 40
   airControlSpeed: 2
   noClip: 0
   noClipSpeed: 20
   noClipSprintMultiplier: 2
   grappleDistance: 30
-  isGrappled: 1
+  isGrappled: 0
   grappleTarget: {fileID: 0}
