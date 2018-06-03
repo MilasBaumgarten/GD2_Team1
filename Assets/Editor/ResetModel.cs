@@ -20,6 +20,11 @@ public class ResetModel : EditorWindow {
 				addChild(objectArray[i], objects);
 			}
 
+			foreach(GameObject o in objects){
+				Vector3 pos = o.transform.position;
+				o.transform.position = new Vector3(Mathf.Floor(pos.x), Mathf.Floor(pos.y), Mathf.Floor(pos.z));
+			}
+
 			List<GameObject> models = new List<GameObject>();
 
 			// nur Objekte mit Name "Modell" aus Liste suchen
