@@ -4,6 +4,19 @@ using UnityEditor;
 
 public class ResetModel : EditorWindow {
 
+	/*@MenuItem ("Tools/Revert to Prefab %r")
+	static function Revert() {
+		var selection = Selection.gameObjects;
+
+		if (selection.length > 0) {
+			for (var i : int = 0; i < selection.length; i++) {
+				EditorUtility.ResetGameObjectToPrefabState(selection[i]);
+			}
+		} else {
+			Debug.Log("Cannot revert to prefab - nothing selected");
+		}
+	}*/
+
 	[MenuItem("Window/ResetModelsInScene")]
 	static void Init(){
 		ResetModel window = (ResetModel) EditorWindow.GetWindow(typeof(ResetModel));
@@ -17,7 +30,10 @@ public class ResetModel : EditorWindow {
 
 			// alle Objekte und Kinder in Liste einfügen
 			for (int i = 0; i < objectArray.Length; i++){
-				addChild(objectArray[i], objects);
+				// Objekte, die nicht resettet werden sollen abfangen
+				if (!objectArray[i].name.Contains("Player")){
+					addChild(objectArray[i], objects);
+				}
 			}
 
 			foreach(GameObject o in objects){
@@ -36,7 +52,8 @@ public class ResetModel : EditorWindow {
 			
 			// reset Transform
 			foreach(GameObject o in models){
-				o.transform.position = o.transform.parent.transform.position;
+				PrefabUtility.ResetToPrefabState(o.transform);
+				//o.transform.position = o.transform.parent.transform.position;
 			}
 		}
 	}
