@@ -107,8 +107,16 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Geschwindigkeit mit der der Spieler seine Bewegungsrichtung in der Luft ändern kann")]
     public float airControlSpeed;
 
+    [Tooltip("Die maximale Distanz auf die der Spieler grapplen kan")]
+    public float maxGrappleDistance;
+
+    [Tooltip("Die momentane länge der Kette")]
     public float grappleDistance;
 
+    [Tooltip("Die Geschwindigkeit mit der der Spieler die länge der Kette ändern kann")]
+    public float reelInSpeed;
+
+    [Tooltip("Grapplet der Spieler gerade?")]
     public bool isGrappled;
     [Space]
 

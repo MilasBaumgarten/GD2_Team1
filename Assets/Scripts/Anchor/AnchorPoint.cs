@@ -66,7 +66,7 @@ public class AnchorPoint : MonoBehaviour
     private bool DistanceCheck()    // prüft die Distanz zwischen Ankerpunkt und Spieler
     {
         float dist = (playerObject.transform.position - this.transform.position).magnitude;  // Distanz berechnen
-        if (dist <= player.grappleDistance)   // ist die Distanz kleiner als die Grappledistanz?
+        if (dist <= player.maxGrappleDistance)   // ist die Distanz kleiner als die Grappledistanz?
         {
             return true;
         }

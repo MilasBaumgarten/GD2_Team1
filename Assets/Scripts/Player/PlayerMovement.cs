@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else    //Spieler befindet sich nicht auf dem Boden
             {
-                if (velocity.y < 0.0f)   //Spieler steigt
+                if (velocity.y < 0.0f || player.isGrappled)   //Spieler steigt
                 {
                     velocity.y += gravity * player.fallMultiplier * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung mit Multiplikator abziehen
                 }
@@ -109,9 +109,9 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 testPosition = this.transform.position + velocity * Time.deltaTime; //Position, wo der Spieler sich im nächsten Frame befinden würde
                 Vector3 dist = testPosition - player.anchorPosition;  //abstandsvektor von grapplePosition zu testPosition
 
-                if ((testPosition - player.anchorPosition).magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
+                if (dist.magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
                 {
-                    testPosition  = player.anchorPosition + (testPosition - player.anchorPosition).normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
+                    testPosition  = player.anchorPosition + dist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
                     velocity = (testPosition - this.transform.position).normalized * velocity.magnitude;    //Geschwindigkeit des Spielers ändern
                 }
             }
