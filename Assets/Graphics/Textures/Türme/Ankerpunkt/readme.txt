@@ -1,1 +1,0 @@
-das entsprechende Modell zu den Texturen heißt 'Ankerpunktneu', da UVs gefehlt haben
