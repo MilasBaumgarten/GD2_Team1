@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 1886979224}
   - component: {fileID: 1886979223}
   - component: {fileID: 1886979225}
+  - component: {fileID: 1886979228}
   m_Layer: 8
   m_Name: Cinemachine Brain
   m_TagString: MainCamera
@@ -1110,6 +1111,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 95.1, z: 0}
+--- !u!114 &1886979228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1886979222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 948cc7f1edfb6384b9bf302db5ec47d3, type: 2}
 --- !u!1 &1931446038
 GameObject:
   m_ObjectHideFlags: 0
