@@ -24,6 +24,8 @@ public class ExplosionScriptableObject : ScriptableObject
     [Header("Effekte")]
     [Tooltip("Das Prefab mit Partikeleffekt der Explosion")]
     public GameObject explosionEffect;
+
+    public GameObject absorbEffect;
     #endregion
 
     [Space]

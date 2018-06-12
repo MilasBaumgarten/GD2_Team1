@@ -38,4 +38,15 @@ public class Explosion : MonoBehaviour
             Destroy(gameObject);  //lässt das Gameobject am Ende der Explosion verschwinden
         }*/
     }
+
+    public void Absorb(RaycastHit hit)
+    {
+        // berechne Rotation für die Explosion, damit sie immer von der Oberfläche des Aufprallpunktes weggeht
+        Vector3 normal = hit.transform.TransformDirection(hit.normal);
+        Quaternion rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(Vector3.up, normal));  // Normale ist immer oben
+
+        GameObject instance = Instantiate(explosion.absorbEffect, this.transform.position, rotation); //Partikeleffekt erscheinen lassen
+
+        Destroy(instance, explosion.effektLifeTime);   //entfernt den Partikeleffekt (klon) nach 2 sekunden - potenziell änderbar mit variable falls nötig
+    }
 }
