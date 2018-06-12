@@ -35,7 +35,7 @@ public class PlayerGrapple : MonoBehaviour
         if (player.isGrappled)
         {
             float input = (Input.GetKey(KeyCode.LeftShift) ? 1 : 0) + (Input.GetKey(KeyCode.LeftControl) ? -1 : 0);
-            player.grappleDistance = Mathf.Clamp(player.grappleDistance + input * player.reelInSpeed, 3.0f, player.maxGrappleDistance);
+            player.grappleDistance = Mathf.Clamp(player.grappleDistance + input * player.reelInSpeed, 10.0f, player.maxGrappleDistance);
         }
     }
 }

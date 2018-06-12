@@ -107,12 +107,17 @@ public class PlayerMovement : MonoBehaviour
             if (player.isGrappled)  //Spieler ist eingehakt
             {
                 Vector3 testPosition = this.transform.position + velocity * Time.deltaTime; //Position, wo der Spieler sich im nächsten Frame befinden würde
-                Vector3 dist = testPosition - player.anchorPosition;  //abstandsvektor von grapplePosition zu testPosition
+                Vector3 dist = transform.position - player.anchorPosition;
+                Vector3 testDist = testPosition - player.anchorPosition;  //abstandsvektor von grapplePosition zu testPosition
 
-                if (dist.magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
+                if (testDist.magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
                 {
-                    testPosition  = player.anchorPosition + dist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
+                    testPosition  = player.anchorPosition + testDist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
                     velocity = (testPosition - this.transform.position).normalized * velocity.magnitude;    //Geschwindigkeit des Spielers ändern
+                }
+                if(dist.magnitude > player.grappleDistance)
+                {
+                    velocity -= dist - Vector3.ClampMagnitude(dist, player.grappleDistance);
                 }
             }
             controller.Move(velocity * Time.deltaTime);   //Spieler Bewegen
