@@ -38,6 +38,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightNoise:
+        m_Texture: {fileID: 2800000, guid: 44b66fc4e87522748b156ff997811058, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LavaNoise:
+        m_Texture: {fileID: 2800000, guid: 44b66fc4e87522748b156ff997811058, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -74,6 +86,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _HeightNoiseScrollSpeed: 0.004
+    - _LavaScrollSpeed: 0.02
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -81,11 +95,15 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StoneDepthClamp: 0.255
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LavaPrimaryColor: {r: 1, g: 0, b: 0, a: 1}
+    - _LavaSecondaryColor: {r: 1, g: 0.7337728, b: 0.4485293, a: 1}
+    - _StoneColor: {r: 0.15441176, g: 0.15441176, b: 0.15441176, a: 1}
     - _node_4587: {r: 1, g: 0, b: 0, a: 1}
     - _node_5657: {r: 1, g: 0.7337728, b: 0.4485293, a: 1}
     - _node_6551: {r: 0.15441176, g: 0.15441176, b: 0.15441176, a: 1}
