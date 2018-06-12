@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else    //Spieler befindet sich nicht auf dem Boden
             {
-                if (velocity.y < 0.0f)   //Spieler steigt
+                if (velocity.y < 0.0f || player.isGrappled)   //Spieler steigt
                 {
                     velocity.y += gravity * player.fallMultiplier * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung mit Multiplikator abziehen
                 }
@@ -104,17 +104,22 @@ public class PlayerMovement : MonoBehaviour
                     velocity = new Vector3(temp.x, velocity.y, temp.z); //neue Bewegungsgeschwindigkeit berechnen
                 }
             }
-            //if (player.isGrappled && player.grappleTarget != null)  //WIP
-            //{
-            //    Vector3 testPosition = this.transform.position + velocity * Time.deltaTime;
+            if (player.isGrappled)  //Spieler ist eingehakt
+            {
+                Vector3 testPosition = this.transform.position + velocity * Time.deltaTime; //Position, wo der Spieler sich im nächsten Frame befinden würde
+                Vector3 dist = transform.position - player.anchorPosition;
+                Vector3 testDist = testPosition - player.anchorPosition;  //abstandsvektor von grapplePosition zu testPosition
 
-            //    if ((player.grappleTarget.transform.position - this.transform.position).magnitude > player.grappleDistance)
-            //    {
-            //        testPosition = Vector3.ClampMagnitude(testPosition, player.grappleDistance);
-            //        velocity = Vector3.RotateTowards(velocity, testPosition - this.transform.position, 360.0f, 100f);
-            //        velocity = Vector3.RotateTowards(velocity, testPosition - this.transform.position, 360.0f, 100f);
-            //    }
-            //}
+                if (testDist.magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
+                {
+                    testPosition  = player.anchorPosition + testDist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
+                    velocity = (testPosition - this.transform.position).normalized * velocity.magnitude;    //Geschwindigkeit des Spielers ändern
+                }
+                if(dist.magnitude > player.grappleDistance)
+                {
+                    velocity -= dist - Vector3.ClampMagnitude(dist, player.grappleDistance);
+                }
+            }
             controller.Move(velocity * Time.deltaTime);   //Spieler Bewegen
         }
         #endregion
@@ -139,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
     private void CeilingCheck() //Schaut nach ob sich etwas über dem Spieler befindet
     {
         RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, Vector3.up, out hit, controller.height / 2 + 0.005f) && velocity.y > 0) //bonks his head
+        if (Physics.Raycast(this.transform.position, Vector3.up, out hit, controller.height / 2 + 0.005f, 1 << LayerMask.NameToLayer("Environment")) && velocity.y > 0) //bonks his head
         {
             velocity.y = 0.0f;   //oof
         }
