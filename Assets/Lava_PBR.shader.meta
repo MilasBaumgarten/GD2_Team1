@@ -1,16 +1,17 @@
 fileFormatVersion: 2
 guid: e691139f5272c95409a3a8d5a66cbb58
-timeCreated: 1528832245
+timeCreated: 1529102511
 licenseType: Free
 ShaderImporter:
   externalObjects: {}
   defaultTextures:
   - _HeightNoise: {fileID: 2800000, guid: 44b66fc4e87522748b156ff997811058, type: 3}
-  - _StoneTexture: {fileID: 2800000, guid: 4f27fd209c2a42e409fc8ba3e570600a, type: 3}
-  - _LavaEmission: {fileID: 2800000, guid: 45ab23a068a93ee4fbbb365e1f8bfb6e, type: 3}
-  - _StoneNormal: {fileID: 2800000, guid: 1914417326e08664da719b78dbf48c2c, type: 3}
-  - _LavaRough: {fileID: 2800000, guid: baab75ac58641664a8100f4567da0af5, type: 3}
-  - _LavaNormal: {fileID: 2800000, guid: ecc5ddfab94e5ff4ca9bd291211ab187, type: 3}
+  - _RoughnessStone: {fileID: 2800000, guid: 4f27fd209c2a42e409fc8ba3e570600a, type: 3}
+  - _EmissionLava: {fileID: 2800000, guid: 45ab23a068a93ee4fbbb365e1f8bfb6e, type: 3}
+  - _NormalStone: {fileID: 2800000, guid: 2d55e4c48757be34c8cb2c77692858d6, type: 3}
+  - _RoughnessLava: {fileID: 2800000, guid: baab75ac58641664a8100f4567da0af5, type: 3}
+  - _NormalLava: {fileID: 2800000, guid: b32be1b37db5efd4399c9fe6e5d791da, type: 3}
+  - _HeightStone: {fileID: 2800000, guid: 1914417326e08664da719b78dbf48c2c, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

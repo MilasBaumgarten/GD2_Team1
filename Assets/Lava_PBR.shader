@@ -1,20 +1,21 @@
 // Shader created with Shader Forge v1.38 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:33611,y:32572,varname:node_2865,prsc:2|diff-9045-OUT,spec-6797-OUT,normal-7484-OUT,emission-7071-OUT;n:type:ShaderForge.SFN_Lerp,id:7071,x:33191,y:32804,varname:node_7071,prsc:2|A-1475-RGB,B-2906-RGB,T-3624-OUT;n:type:ShaderForge.SFN_Tex2d,id:5955,x:31721,y:33119,ptovrint:False,ptlb:HeightNoise,ptin:_HeightNoise,varname:node_1392,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:44b66fc4e87522748b156ff997811058,ntxv:0,isnm:False|UVIN-7038-UVOUT;n:type:ShaderForge.SFN_Panner,id:7038,x:31545,y:33119,varname:node_7038,prsc:2,spu:0,spv:1|UVIN-7849-UVOUT,DIST-5218-OUT;n:type:ShaderForge.SFN_TexCoord,id:7849,x:31314,y:33197,varname:node_7849,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Time,id:7937,x:31079,y:33317,varname:node_7937,prsc:2;n:type:ShaderForge.SFN_Vector1,id:5031,x:31721,y:33285,varname:node_5031,prsc:2,v1:0.2;n:type:ShaderForge.SFN_Multiply,id:5353,x:32029,y:33112,varname:node_5353,prsc:2|A-5955-R,B-5031-OUT;n:type:ShaderForge.SFN_Subtract,id:6438,x:32281,y:33082,varname:node_6438,prsc:2|A-2708-OUT,B-5353-OUT;n:type:ShaderForge.SFN_Panner,id:243,x:32201,y:32554,varname:node_243,prsc:2,spu:0,spv:1|UVIN-9227-UVOUT,DIST-8864-OUT;n:type:ShaderForge.SFN_TexCoord,id:9227,x:32000,y:32554,varname:node_9227,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Time,id:3927,x:31788,y:32564,varname:node_3927,prsc:2;n:type:ShaderForge.SFN_Clamp,id:6494,x:32542,y:33083,varname:node_6494,prsc:2|IN-6438-OUT,MIN-9954-OUT,MAX-5580-OUT;n:type:ShaderForge.SFN_Vector1,id:9954,x:32281,y:33220,varname:node_9954,prsc:2,v1:0;n:type:ShaderForge.SFN_Slider,id:5580,x:32214,y:33308,ptovrint:False,ptlb:StoneDepthClamp,ptin:_StoneDepthClamp,varname:node_7884,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0.001,cur:0.0643912,max:1;n:type:ShaderForge.SFN_Divide,id:1293,x:32743,y:33083,varname:node_1293,prsc:2|A-6494-OUT,B-5580-OUT;n:type:ShaderForge.SFN_Power,id:3624,x:32949,y:33083,varname:node_3624,prsc:2|VAL-1293-OUT,EXP-2195-OUT;n:type:ShaderForge.SFN_Vector1,id:2195,x:32731,y:33264,varname:node_2195,prsc:2,v1:5;n:type:ShaderForge.SFN_ValueProperty,id:5394,x:31079,y:33489,ptovrint:False,ptlb:HeightNoiseScrollSpeed,ptin:_HeightNoiseScrollSpeed,varname:node_7836,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0.004;n:type:ShaderForge.SFN_Multiply,id:5218,x:31326,y:33363,varname:node_5218,prsc:2|A-7937-T,B-5394-OUT;n:type:ShaderForge.SFN_Multiply,id:8864,x:31989,y:32725,varname:node_8864,prsc:2|A-3927-T,B-461-OUT;n:type:ShaderForge.SFN_ValueProperty,id:461,x:31768,y:32759,ptovrint:False,ptlb:LavaScrollSpeed,ptin:_LavaScrollSpeed,varname:node_406,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0.02;n:type:ShaderForge.SFN_Time,id:637,x:31314,y:33002,varname:node_637,prsc:2;n:type:ShaderForge.SFN_Vector1,id:4184,x:31326,y:33133,varname:node_4184,prsc:2,v1:75;n:type:ShaderForge.SFN_Divide,id:8699,x:31550,y:33033,varname:node_8699,prsc:2|A-637-T,B-4184-OUT;n:type:ShaderForge.SFN_Tex2d,id:2906,x:32752,y:32429,ptovrint:False,ptlb:StoneTexture,ptin:_StoneTexture,varname:node_5555,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:4f27fd209c2a42e409fc8ba3e570600a,ntxv:3,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:1475,x:32752,y:32612,ptovrint:False,ptlb:LavaEmission,ptin:_LavaEmission,varname:node_1475,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:45ab23a068a93ee4fbbb365e1f8bfb6e,ntxv:0,isnm:False|UVIN-243-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:6488,x:32949,y:33453,ptovrint:False,ptlb:StoneNormal,ptin:_StoneNormal,varname:node_6488,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:1914417326e08664da719b78dbf48c2c,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Tex2d,id:599,x:32752,y:32231,ptovrint:False,ptlb:LavaRough,ptin:_LavaRough,varname:node_599,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:baab75ac58641664a8100f4567da0af5,ntxv:0,isnm:False|UVIN-243-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:3121,x:32949,y:33264,ptovrint:False,ptlb:LavaNormal,ptin:_LavaNormal,varname:node_3121,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:ecc5ddfab94e5ff4ca9bd291211ab187,ntxv:3,isnm:True|UVIN-243-UVOUT;n:type:ShaderForge.SFN_ComponentMask,id:2708,x:32048,y:32945,varname:node_2708,prsc:2,cc1:0,cc2:-1,cc3:-1,cc4:-1|IN-6488-B;n:type:ShaderForge.SFN_Lerp,id:7484,x:33269,y:33326,varname:node_7484,prsc:2|A-3121-RGB,B-6488-RGB,T-3624-OUT;n:type:ShaderForge.SFN_Color,id:7361,x:32902,y:32231,ptovrint:False,ptlb:node_7361,ptin:_node_7361,varname:node_7361,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0.5,c2:0.5,c3:0.5,c4:1;n:type:ShaderForge.SFN_Lerp,id:6797,x:33191,y:32597,varname:node_6797,prsc:2|A-599-R,B-2906-R,T-3624-OUT;n:type:ShaderForge.SFN_Lerp,id:9045,x:33201,y:32436,varname:node_9045,prsc:2|A-1475-RGB,B-7361-RGB,T-3624-OUT;proporder:5955-5580-2906-5394-461-1475-6488-3121-7361-599;pass:END;sub:END;*/
+/*SF_DATA;ver:1.38;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,atwp:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:33611,y:32572,varname:node_2865,prsc:2|diff-9045-OUT,spec-6797-OUT,normal-7484-OUT,emission-7071-OUT;n:type:ShaderForge.SFN_Lerp,id:7071,x:33191,y:32804,varname:node_7071,prsc:2|A-1475-RGB,B-2906-RGB,T-3624-OUT;n:type:ShaderForge.SFN_Tex2d,id:5955,x:31721,y:33119,ptovrint:False,ptlb:HeightNoise,ptin:_HeightNoise,varname:node_1392,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:44b66fc4e87522748b156ff997811058,ntxv:0,isnm:False|UVIN-7038-UVOUT;n:type:ShaderForge.SFN_Panner,id:7038,x:31545,y:33119,varname:node_7038,prsc:2,spu:0,spv:1|UVIN-7849-UVOUT,DIST-5218-OUT;n:type:ShaderForge.SFN_TexCoord,id:7849,x:31314,y:33197,varname:node_7849,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Time,id:7937,x:30901,y:32936,varname:node_7937,prsc:2;n:type:ShaderForge.SFN_Vector1,id:5031,x:31721,y:33285,varname:node_5031,prsc:2,v1:0.2;n:type:ShaderForge.SFN_Multiply,id:5353,x:32029,y:33112,varname:node_5353,prsc:2|A-5955-R,B-5031-OUT;n:type:ShaderForge.SFN_Subtract,id:6438,x:32281,y:33082,varname:node_6438,prsc:2|A-8015-A,B-5353-OUT;n:type:ShaderForge.SFN_Panner,id:243,x:32201,y:32554,varname:node_243,prsc:2,spu:0,spv:1|UVIN-9227-UVOUT,DIST-8864-OUT;n:type:ShaderForge.SFN_TexCoord,id:9227,x:32000,y:32554,varname:node_9227,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Time,id:3927,x:31788,y:32564,varname:node_3927,prsc:2;n:type:ShaderForge.SFN_Clamp,id:6494,x:32542,y:33083,varname:node_6494,prsc:2|IN-6438-OUT,MIN-9954-OUT,MAX-5580-OUT;n:type:ShaderForge.SFN_Vector1,id:9954,x:32258,y:33215,varname:node_9954,prsc:2,v1:0;n:type:ShaderForge.SFN_Slider,id:5580,x:32214,y:33308,ptovrint:False,ptlb:StoneDepthClamp,ptin:_StoneDepthClamp,varname:node_7884,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0.001,cur:0.001,max:1;n:type:ShaderForge.SFN_Divide,id:1293,x:32743,y:33083,varname:node_1293,prsc:2|A-6494-OUT,B-5580-OUT;n:type:ShaderForge.SFN_Power,id:3624,x:32949,y:33083,varname:node_3624,prsc:2|VAL-1293-OUT,EXP-2195-OUT;n:type:ShaderForge.SFN_Vector1,id:2195,x:32731,y:33264,varname:node_2195,prsc:2,v1:5;n:type:ShaderForge.SFN_ValueProperty,id:5394,x:30901,y:33182,ptovrint:False,ptlb:HeightNoiseScrollSpeedAdditive,ptin:_HeightNoiseScrollSpeedAdditive,varname:node_7836,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0.004;n:type:ShaderForge.SFN_Multiply,id:5218,x:31314,y:33343,varname:node_5218,prsc:2|A-7937-T,B-4380-OUT;n:type:ShaderForge.SFN_Multiply,id:8864,x:31989,y:32725,varname:node_8864,prsc:2|A-3927-T,B-461-OUT;n:type:ShaderForge.SFN_ValueProperty,id:461,x:31768,y:32759,ptovrint:False,ptlb:LavaScrollSpeed,ptin:_LavaScrollSpeed,varname:node_406,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0.02;n:type:ShaderForge.SFN_Tex2d,id:2906,x:32724,y:32424,ptovrint:False,ptlb:RoughnessStone,ptin:_RoughnessStone,varname:node_5555,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:4f27fd209c2a42e409fc8ba3e570600a,ntxv:3,isnm:False|UVIN-4647-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:1475,x:32700,y:32670,ptovrint:False,ptlb:EmissionLava,ptin:_EmissionLava,varname:node_1475,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:45ab23a068a93ee4fbbb365e1f8bfb6e,ntxv:0,isnm:False|UVIN-243-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:6488,x:32949,y:33452,ptovrint:False,ptlb:NormalStone,ptin:_NormalStone,varname:node_6488,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:2d55e4c48757be34c8cb2c77692858d6,ntxv:3,isnm:True|UVIN-4647-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:599,x:32752,y:32231,ptovrint:False,ptlb:RoughnessLava,ptin:_RoughnessLava,varname:node_599,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:baab75ac58641664a8100f4567da0af5,ntxv:0,isnm:False|UVIN-243-UVOUT;n:type:ShaderForge.SFN_Tex2d,id:3121,x:32949,y:33264,ptovrint:False,ptlb:NormalLava,ptin:_NormalLava,varname:node_3121,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:b32be1b37db5efd4399c9fe6e5d791da,ntxv:3,isnm:True|UVIN-243-UVOUT;n:type:ShaderForge.SFN_Lerp,id:7484,x:33269,y:33326,varname:node_7484,prsc:2|A-3121-RGB,B-6488-RGB,T-3624-OUT;n:type:ShaderForge.SFN_Lerp,id:6797,x:33201,y:32583,varname:node_6797,prsc:2|A-599-A,B-2906-A,T-3624-OUT;n:type:ShaderForge.SFN_Lerp,id:9045,x:33201,y:32436,varname:node_9045,prsc:2|A-1475-RGB,B-2906-RGB,T-3624-OUT;n:type:ShaderForge.SFN_Tex2d,id:8015,x:32029,y:32930,ptovrint:False,ptlb:HeightStone,ptin:_HeightStone,varname:node_8015,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:1914417326e08664da719b78dbf48c2c,ntxv:0,isnm:False|UVIN-4647-UVOUT;n:type:ShaderForge.SFN_Panner,id:4647,x:31545,y:32922,varname:node_4647,prsc:2,spu:0,spv:1|UVIN-7989-UVOUT,DIST-8172-OUT;n:type:ShaderForge.SFN_TexCoord,id:7989,x:31314,y:32922,varname:node_7989,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_ValueProperty,id:4191,x:30901,y:33086,ptovrint:False,ptlb:HeightStoneScrollSpeed,ptin:_HeightStoneScrollSpeed,varname:_HeightNoiseScrollSpeed_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:0.004;n:type:ShaderForge.SFN_Multiply,id:8172,x:31314,y:33060,varname:node_8172,prsc:2|A-7937-T,B-4191-OUT;n:type:ShaderForge.SFN_Add,id:4380,x:31138,y:33343,varname:node_4380,prsc:2|A-4191-OUT,B-5394-OUT;proporder:1475-461-8015-5955-4191-5394-6488-3121-2906-599-5580;pass:END;sub:END;*/
 
 Shader "Shader Forge/Lava_PBR" {
     Properties {
-        _HeightNoise ("HeightNoise", 2D) = "white" {}
-        _StoneDepthClamp ("StoneDepthClamp", Range(0.001, 1)) = 0.0643912
-        _StoneTexture ("StoneTexture", 2D) = "bump" {}
-        _HeightNoiseScrollSpeed ("HeightNoiseScrollSpeed", Float ) = 0.004
+        _EmissionLava ("EmissionLava", 2D) = "white" {}
         _LavaScrollSpeed ("LavaScrollSpeed", Float ) = 0.02
-        _LavaEmission ("LavaEmission", 2D) = "white" {}
-        _StoneNormal ("StoneNormal", 2D) = "bump" {}
-        _LavaNormal ("LavaNormal", 2D) = "bump" {}
-        _node_7361 ("node_7361", Color) = (0.5,0.5,0.5,1)
-        _LavaRough ("LavaRough", 2D) = "white" {}
+        _HeightStone ("HeightStone", 2D) = "white" {}
+        _HeightNoise ("HeightNoise", 2D) = "white" {}
+        _HeightStoneScrollSpeed ("HeightStoneScrollSpeed", Float ) = 0.004
+        _HeightNoiseScrollSpeedAdditive ("HeightNoiseScrollSpeedAdditive", Float ) = 0.004
+        _NormalStone ("NormalStone", 2D) = "bump" {}
+        _NormalLava ("NormalLava", 2D) = "bump" {}
+        _RoughnessStone ("RoughnessStone", 2D) = "bump" {}
+        _RoughnessLava ("RoughnessLava", 2D) = "white" {}
+        _StoneDepthClamp ("StoneDepthClamp", Range(0.001, 1)) = 0.001
     }
     SubShader {
         Tags {
@@ -47,14 +48,15 @@ Shader "Shader Forge/Lava_PBR" {
             #pragma target 3.0
             uniform sampler2D _HeightNoise; uniform float4 _HeightNoise_ST;
             uniform float _StoneDepthClamp;
-            uniform float _HeightNoiseScrollSpeed;
+            uniform float _HeightNoiseScrollSpeedAdditive;
             uniform float _LavaScrollSpeed;
-            uniform sampler2D _StoneTexture; uniform float4 _StoneTexture_ST;
-            uniform sampler2D _LavaEmission; uniform float4 _LavaEmission_ST;
-            uniform sampler2D _StoneNormal; uniform float4 _StoneNormal_ST;
-            uniform sampler2D _LavaRough; uniform float4 _LavaRough_ST;
-            uniform sampler2D _LavaNormal; uniform float4 _LavaNormal_ST;
-            uniform float4 _node_7361;
+            uniform sampler2D _RoughnessStone; uniform float4 _RoughnessStone_ST;
+            uniform sampler2D _EmissionLava; uniform float4 _EmissionLava_ST;
+            uniform sampler2D _NormalStone; uniform float4 _NormalStone_ST;
+            uniform sampler2D _RoughnessLava; uniform float4 _RoughnessLava_ST;
+            uniform sampler2D _NormalLava; uniform float4 _NormalLava_ST;
+            uniform sampler2D _HeightStone; uniform float4 _HeightStone_ST;
+            uniform float _HeightStoneScrollSpeed;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -107,15 +109,15 @@ Shader "Shader Forge/Lava_PBR" {
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float4 node_3927 = _Time;
                 float2 node_243 = (i.uv0+(node_3927.g*_LavaScrollSpeed)*float2(0,1));
-                float3 _LavaNormal_var = UnpackNormal(tex2D(_LavaNormal,TRANSFORM_TEX(node_243, _LavaNormal)));
-                float3 _StoneNormal_var = UnpackNormal(tex2D(_StoneNormal,TRANSFORM_TEX(i.uv0, _StoneNormal)));
-                float node_2708 = _StoneNormal_var.b.r;
+                float3 _NormalLava_var = UnpackNormal(tex2D(_NormalLava,TRANSFORM_TEX(node_243, _NormalLava)));
                 float4 node_7937 = _Time;
-                float2 node_7038 = (i.uv0+(node_7937.g*_HeightNoiseScrollSpeed)*float2(0,1));
+                float2 node_4647 = (i.uv0+(node_7937.g*_HeightStoneScrollSpeed)*float2(0,1));
+                float3 _NormalStone_var = UnpackNormal(tex2D(_NormalStone,TRANSFORM_TEX(node_4647, _NormalStone)));
+                float4 _HeightStone_var = tex2D(_HeightStone,TRANSFORM_TEX(node_4647, _HeightStone));
+                float2 node_7038 = (i.uv0+(node_7937.g*(_HeightStoneScrollSpeed+_HeightNoiseScrollSpeedAdditive))*float2(0,1));
                 float4 _HeightNoise_var = tex2D(_HeightNoise,TRANSFORM_TEX(node_7038, _HeightNoise));
-                float node_5353 = (_HeightNoise_var.r*0.2);
-                float node_3624 = pow((clamp((node_2708-node_5353),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
-                float3 normalLocal = lerp(_LavaNormal_var.rgb,_StoneNormal_var.rgb,node_3624);
+                float node_3624 = pow((clamp((_HeightStone_var.a-(_HeightNoise_var.r*0.2)),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
+                float3 normalLocal = lerp(_NormalLava_var.rgb,_NormalStone_var.rgb,node_3624);
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
                 float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
@@ -174,13 +176,12 @@ Shader "Shader Forge/Lava_PBR" {
 ////// Specular:
                 float NdotL = saturate(dot( normalDirection, lightDirection ));
                 float LdotH = saturate(dot(lightDirection, halfDirection));
-                float4 _LavaRough_var = tex2D(_LavaRough,TRANSFORM_TEX(node_243, _LavaRough));
-                float4 _StoneTexture_var = tex2D(_StoneTexture,TRANSFORM_TEX(i.uv0, _StoneTexture));
-                float node_6797 = lerp(_LavaRough_var.r,_StoneTexture_var.r,node_3624);
-                float3 specularColor = node_6797;
+                float4 _RoughnessLava_var = tex2D(_RoughnessLava,TRANSFORM_TEX(node_243, _RoughnessLava));
+                float4 _RoughnessStone_var = tex2D(_RoughnessStone,TRANSFORM_TEX(node_4647, _RoughnessStone));
+                float3 specularColor = lerp(_RoughnessLava_var.a,_RoughnessStone_var.a,node_3624);
                 float specularMonochrome;
-                float4 _LavaEmission_var = tex2D(_LavaEmission,TRANSFORM_TEX(node_243, _LavaEmission));
-                float3 diffuseColor = lerp(_LavaEmission_var.rgb,_node_7361.rgb,node_3624); // Need this for specular when using metallic
+                float4 _EmissionLava_var = tex2D(_EmissionLava,TRANSFORM_TEX(node_243, _EmissionLava));
+                float3 diffuseColor = lerp(_EmissionLava_var.rgb,_RoughnessStone_var.rgb,node_3624); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -219,7 +220,7 @@ Shader "Shader Forge/Lava_PBR" {
                 indirectDiffuse += gi.indirect.diffuse;
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
 ////// Emissive:
-                float3 emissive = lerp(_LavaEmission_var.rgb,_StoneTexture_var.rgb,node_3624);
+                float3 emissive = lerp(_EmissionLava_var.rgb,_RoughnessStone_var.rgb,node_3624);
 /// Final Color:
                 float3 finalColor = diffuse + specular + emissive;
                 fixed4 finalRGBA = fixed4(finalColor,1);
@@ -256,14 +257,15 @@ Shader "Shader Forge/Lava_PBR" {
             #pragma target 3.0
             uniform sampler2D _HeightNoise; uniform float4 _HeightNoise_ST;
             uniform float _StoneDepthClamp;
-            uniform float _HeightNoiseScrollSpeed;
+            uniform float _HeightNoiseScrollSpeedAdditive;
             uniform float _LavaScrollSpeed;
-            uniform sampler2D _StoneTexture; uniform float4 _StoneTexture_ST;
-            uniform sampler2D _LavaEmission; uniform float4 _LavaEmission_ST;
-            uniform sampler2D _StoneNormal; uniform float4 _StoneNormal_ST;
-            uniform sampler2D _LavaRough; uniform float4 _LavaRough_ST;
-            uniform sampler2D _LavaNormal; uniform float4 _LavaNormal_ST;
-            uniform float4 _node_7361;
+            uniform sampler2D _RoughnessStone; uniform float4 _RoughnessStone_ST;
+            uniform sampler2D _EmissionLava; uniform float4 _EmissionLava_ST;
+            uniform sampler2D _NormalStone; uniform float4 _NormalStone_ST;
+            uniform sampler2D _RoughnessLava; uniform float4 _RoughnessLava_ST;
+            uniform sampler2D _NormalLava; uniform float4 _NormalLava_ST;
+            uniform sampler2D _HeightStone; uniform float4 _HeightStone_ST;
+            uniform float _HeightStoneScrollSpeed;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -305,15 +307,15 @@ Shader "Shader Forge/Lava_PBR" {
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float4 node_3927 = _Time;
                 float2 node_243 = (i.uv0+(node_3927.g*_LavaScrollSpeed)*float2(0,1));
-                float3 _LavaNormal_var = UnpackNormal(tex2D(_LavaNormal,TRANSFORM_TEX(node_243, _LavaNormal)));
-                float3 _StoneNormal_var = UnpackNormal(tex2D(_StoneNormal,TRANSFORM_TEX(i.uv0, _StoneNormal)));
-                float node_2708 = _StoneNormal_var.b.r;
+                float3 _NormalLava_var = UnpackNormal(tex2D(_NormalLava,TRANSFORM_TEX(node_243, _NormalLava)));
                 float4 node_7937 = _Time;
-                float2 node_7038 = (i.uv0+(node_7937.g*_HeightNoiseScrollSpeed)*float2(0,1));
+                float2 node_4647 = (i.uv0+(node_7937.g*_HeightStoneScrollSpeed)*float2(0,1));
+                float3 _NormalStone_var = UnpackNormal(tex2D(_NormalStone,TRANSFORM_TEX(node_4647, _NormalStone)));
+                float4 _HeightStone_var = tex2D(_HeightStone,TRANSFORM_TEX(node_4647, _HeightStone));
+                float2 node_7038 = (i.uv0+(node_7937.g*(_HeightStoneScrollSpeed+_HeightNoiseScrollSpeedAdditive))*float2(0,1));
                 float4 _HeightNoise_var = tex2D(_HeightNoise,TRANSFORM_TEX(node_7038, _HeightNoise));
-                float node_5353 = (_HeightNoise_var.r*0.2);
-                float node_3624 = pow((clamp((node_2708-node_5353),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
-                float3 normalLocal = lerp(_LavaNormal_var.rgb,_StoneNormal_var.rgb,node_3624);
+                float node_3624 = pow((clamp((_HeightStone_var.a-(_HeightNoise_var.r*0.2)),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
+                float3 normalLocal = lerp(_NormalLava_var.rgb,_NormalStone_var.rgb,node_3624);
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
                 float3 lightColor = _LightColor0.rgb;
@@ -331,13 +333,12 @@ Shader "Shader Forge/Lava_PBR" {
 ////// Specular:
                 float NdotL = saturate(dot( normalDirection, lightDirection ));
                 float LdotH = saturate(dot(lightDirection, halfDirection));
-                float4 _LavaRough_var = tex2D(_LavaRough,TRANSFORM_TEX(node_243, _LavaRough));
-                float4 _StoneTexture_var = tex2D(_StoneTexture,TRANSFORM_TEX(i.uv0, _StoneTexture));
-                float node_6797 = lerp(_LavaRough_var.r,_StoneTexture_var.r,node_3624);
-                float3 specularColor = node_6797;
+                float4 _RoughnessLava_var = tex2D(_RoughnessLava,TRANSFORM_TEX(node_243, _RoughnessLava));
+                float4 _RoughnessStone_var = tex2D(_RoughnessStone,TRANSFORM_TEX(node_4647, _RoughnessStone));
+                float3 specularColor = lerp(_RoughnessLava_var.a,_RoughnessStone_var.a,node_3624);
                 float specularMonochrome;
-                float4 _LavaEmission_var = tex2D(_LavaEmission,TRANSFORM_TEX(node_243, _LavaEmission));
-                float3 diffuseColor = lerp(_LavaEmission_var.rgb,_node_7361.rgb,node_3624); // Need this for specular when using metallic
+                float4 _EmissionLava_var = tex2D(_EmissionLava,TRANSFORM_TEX(node_243, _EmissionLava));
+                float3 diffuseColor = lerp(_EmissionLava_var.rgb,_RoughnessStone_var.rgb,node_3624); // Need this for specular when using metallic
                 diffuseColor = DiffuseAndSpecularFromMetallic( diffuseColor, specularColor, specularColor, specularMonochrome );
                 specularMonochrome = 1.0-specularMonochrome;
                 float NdotV = abs(dot( normalDirection, viewDirection ));
@@ -399,13 +400,13 @@ Shader "Shader Forge/Lava_PBR" {
             #pragma target 3.0
             uniform sampler2D _HeightNoise; uniform float4 _HeightNoise_ST;
             uniform float _StoneDepthClamp;
-            uniform float _HeightNoiseScrollSpeed;
+            uniform float _HeightNoiseScrollSpeedAdditive;
             uniform float _LavaScrollSpeed;
-            uniform sampler2D _StoneTexture; uniform float4 _StoneTexture_ST;
-            uniform sampler2D _LavaEmission; uniform float4 _LavaEmission_ST;
-            uniform sampler2D _StoneNormal; uniform float4 _StoneNormal_ST;
-            uniform sampler2D _LavaRough; uniform float4 _LavaRough_ST;
-            uniform float4 _node_7361;
+            uniform sampler2D _RoughnessStone; uniform float4 _RoughnessStone_ST;
+            uniform sampler2D _EmissionLava; uniform float4 _EmissionLava_ST;
+            uniform sampler2D _RoughnessLava; uniform float4 _RoughnessLava_ST;
+            uniform sampler2D _HeightStone; uniform float4 _HeightStone_ST;
+            uniform float _HeightStoneScrollSpeed;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float2 texcoord0 : TEXCOORD0;
@@ -435,23 +436,21 @@ Shader "Shader Forge/Lava_PBR" {
                 
                 float4 node_3927 = _Time;
                 float2 node_243 = (i.uv0+(node_3927.g*_LavaScrollSpeed)*float2(0,1));
-                float4 _LavaEmission_var = tex2D(_LavaEmission,TRANSFORM_TEX(node_243, _LavaEmission));
-                float4 _StoneTexture_var = tex2D(_StoneTexture,TRANSFORM_TEX(i.uv0, _StoneTexture));
-                float3 _StoneNormal_var = UnpackNormal(tex2D(_StoneNormal,TRANSFORM_TEX(i.uv0, _StoneNormal)));
-                float node_2708 = _StoneNormal_var.b.r;
+                float4 _EmissionLava_var = tex2D(_EmissionLava,TRANSFORM_TEX(node_243, _EmissionLava));
                 float4 node_7937 = _Time;
-                float2 node_7038 = (i.uv0+(node_7937.g*_HeightNoiseScrollSpeed)*float2(0,1));
+                float2 node_4647 = (i.uv0+(node_7937.g*_HeightStoneScrollSpeed)*float2(0,1));
+                float4 _RoughnessStone_var = tex2D(_RoughnessStone,TRANSFORM_TEX(node_4647, _RoughnessStone));
+                float4 _HeightStone_var = tex2D(_HeightStone,TRANSFORM_TEX(node_4647, _HeightStone));
+                float2 node_7038 = (i.uv0+(node_7937.g*(_HeightStoneScrollSpeed+_HeightNoiseScrollSpeedAdditive))*float2(0,1));
                 float4 _HeightNoise_var = tex2D(_HeightNoise,TRANSFORM_TEX(node_7038, _HeightNoise));
-                float node_5353 = (_HeightNoise_var.r*0.2);
-                float node_3624 = pow((clamp((node_2708-node_5353),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
-                o.Emission = lerp(_LavaEmission_var.rgb,_StoneTexture_var.rgb,node_3624);
+                float node_3624 = pow((clamp((_HeightStone_var.a-(_HeightNoise_var.r*0.2)),0.0,_StoneDepthClamp)/_StoneDepthClamp),5.0);
+                o.Emission = lerp(_EmissionLava_var.rgb,_RoughnessStone_var.rgb,node_3624);
                 
-                float3 diffColor = lerp(_LavaEmission_var.rgb,_node_7361.rgb,node_3624);
+                float3 diffColor = lerp(_EmissionLava_var.rgb,_RoughnessStone_var.rgb,node_3624);
                 float specularMonochrome;
                 float3 specColor;
-                float4 _LavaRough_var = tex2D(_LavaRough,TRANSFORM_TEX(node_243, _LavaRough));
-                float node_6797 = lerp(_LavaRough_var.r,_StoneTexture_var.r,node_3624);
-                diffColor = DiffuseAndSpecularFromMetallic( diffColor, node_6797, specColor, specularMonochrome );
+                float4 _RoughnessLava_var = tex2D(_RoughnessLava,TRANSFORM_TEX(node_243, _RoughnessLava));
+                diffColor = DiffuseAndSpecularFromMetallic( diffColor, lerp(_RoughnessLava_var.a,_RoughnessStone_var.a,node_3624), specColor, specularMonochrome );
                 o.Albedo = diffColor + specColor * 0.125; // No gloss connected. Assume it's 0.5
                 
                 return UnityMetaFragment( o );
