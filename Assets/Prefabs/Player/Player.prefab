@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1079895202559572
 GameObject:
   m_ObjectHideFlags: 1
@@ -143,7 +143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1599857816792538
 GameObject:
   m_ObjectHideFlags: 1
@@ -287,8 +287,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1641677196015894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 304, y: 40, z: 138}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 290.95456, y: -252.25717, z: 101.15949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4745747305672104}
@@ -807,9 +807,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
-  velocity: {x: 0, y: 0, z: 0}
-  anchorPosition: {x: 0, y: 0, z: 0}
-  testPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114802720298788142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -866,7 +863,7 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.001
-  m_MinMoveDistance: 0.01
+  m_MinMoveDistance: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212602647623354840
 SpriteRenderer:
