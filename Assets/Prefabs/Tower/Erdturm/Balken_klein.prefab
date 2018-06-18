@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1938362928551496}
+  m_RootGameObject: {fileID: 1099851854533424}
   m_IsPrefabParent: 1
---- !u!1 &1813285439214986
+--- !u!1 &1099851854533424
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4751285697408906}
-  - component: {fileID: 33153879938133362}
-  - component: {fileID: 23805927372332780}
-  - component: {fileID: 65099654852046712}
+  - component: {fileID: 4210390127712428}
   m_Layer: 0
-  m_Name: Modell
+  m_Name: Balken_klein
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1938362928551496
+--- !u!1 &1354058904909632
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4086355589729054}
+  - component: {fileID: 4503630173391328}
+  - component: {fileID: 33971524567499342}
+  - component: {fileID: 23922900001912864}
+  - component: {fileID: 65552284839728152}
   m_Layer: 0
-  m_Name: Spitzhacke
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4086355589729054
+--- !u!4 &4210390127712428
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938362928551496}
+  m_GameObject: {fileID: 1099851854533424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -103.41, y: 9.06, z: 236.34799}
+  m_LocalPosition: {x: -106.18, y: 8.191906, z: 253.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4751285697408906}
+  - {fileID: 4503630173391328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4751285697408906
+--- !u!4 &4503630173391328
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813285439214986}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 8.685577, y: 8.685577, z: 8.685577}
+  m_GameObject: {fileID: 1354058904909632}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
   m_Children: []
-  m_Father: {fileID: 4086355589729054}
+  m_Father: {fileID: 4210390127712428}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!23 &23805927372332780
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23922900001912864
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813285439214986}
+  m_GameObject: {fileID: 1354058904909632}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,7 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4e764b9545003bd4793d9a3242286a16, type: 2}
+  - {fileID: 2100000, guid: ff72e00bd14d3a94a894bf5173cf6297, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,22 +105,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33153879938133362
+--- !u!33 &33971524567499342
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813285439214986}
-  m_Mesh: {fileID: 4300000, guid: 9a875093bb076e24686e28a1d78f51f7, type: 3}
---- !u!65 &65099654852046712
+  m_GameObject: {fileID: 1354058904909632}
+  m_Mesh: {fileID: 4300020, guid: 2af02e334cf355a4d9332011da12983e, type: 3}
+--- !u!65 &65552284839728152
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813285439214986}
+  m_GameObject: {fileID: 1354058904909632}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18832183, y: 0.25449333, z: 0.032878947}
-  m_Center: {x: -0.000000014901161, y: 0.07573663, z: 0}
+  m_Size: {x: 0.006, y: 0.008006667, z: 0.05999978}
+  m_Center: {x: 0, y: -0.0000033317515, z: 0.030000104}
