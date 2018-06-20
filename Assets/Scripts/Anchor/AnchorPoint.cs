@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class AnchorPoint : MonoBehaviour
 {
-
-    public GameObject indicator;    // Prefab für das Icon
-    private PlayerGrapple grapple;  // Skript auf dem Spieler
-    private GameObject indicatorInstance;   // gespawnte instanz des Icons
+    public PlayerScriptableObject player; //Das PlayerScriptableObject halt
+    private GameObject playerObject; //Das GameObject des Spielers
     private bool active;    // Zustand, ob das Icon aktiv ist
 
     private void Start()
     {
         // initialieren und so
-        grapple = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGrapple>();
+        playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnMouseEnter()
     {
-        if (DistanceCheck())    // ist des Ankerpunkt in Reichweite wird das Icon aktiviert
+        if (DistanceCheck())    // ist der Ankerpunkt in Reichweite wird das Icon aktiviert
         {
             ActivateAnchor();
         }
+        
     }
 
     private void OnMouseOver()
     {
         if (active) // wird das icon bereits gezeigt oder nicht
         {
-            if (!DistanceCheck())   // ist des Ankerpunkt nicht in Reichweite wird das Icon deaktiviert
+            if (!DistanceCheck())   // ist der Ankerpunkt nicht in Reichweite wird das Icon deaktiviert
             {
                 DisableAnchor();
             }
         }
         else
         {
-            if (DistanceCheck())    // ist des Ankerpunkt in Reichweite wird das Icon aktiviert
+            if (DistanceCheck())    // ist der Ankerpunkt in Reichweite wird das Icon aktiviert
             {
                 ActivateAnchor();
             }
@@ -53,27 +52,21 @@ public class AnchorPoint : MonoBehaviour
     private void ActivateAnchor()   // aktiviert, bzw. erzeugt ein Icon im Canvas
     {
         active = true;
-        grapple.setGrappleTarget(this.gameObject);  // PlayerGrapple mitteilen, dass dieser Ankerpunkt anvisiert wird
-        indicatorInstance = Instantiate(indicator); // Icon spawnen lassen
-        indicatorInstance.GetComponent<GrappleIndicator>().setTarget(this.gameObject);  // dem Icon sagen zu welchem Ankerpunkt es gehört
+        player.grappleIndicator.SetActive(true); // Icon aktivieren
+        player.grappleTarget = this.gameObject;
     }
 
     private void DisableAnchor()
     {
         active = false;
-
-        if (grapple.getGrappleTarget().Equals(this.gameObject)) // hoffe dadurch kollision zu vermeiden lul
-        {
-            grapple.setGrappleTarget(null); // PlayerGrapple target wieder leeren
-        }
-
-        Destroy(indicatorInstance); // Icon entfernen
+        player.grappleIndicator.SetActive(false); // Icon deaktivieren
+        player.grappleTarget = null;
     }
 
     private bool DistanceCheck()    // prüft die Distanz zwischen Ankerpunkt und Spieler
     {
-        float dist = (grapple.transform.position - this.transform.position).magnitude;  // Distanz berechnen
-        if (dist <= grapple.player.grappleLength)   // ist die Distanz kleiner als die Grappledistanz?
+        float dist = (playerObject.transform.position - this.transform.position).magnitude;  // Distanz berechnen
+        if (dist <= player.maxGrappleDistance)   // ist die Distanz kleiner als die Grappledistanz?
         {
             return true;
         }
