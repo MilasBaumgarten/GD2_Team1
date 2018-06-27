@@ -21,8 +21,26 @@ GameObject:
   - component: {fileID: 4303066829689622}
   - component: {fileID: 198301186328211662}
   - component: {fileID: 199739748310416814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuer_Additive
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1024279565500818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4344057786579258}
+  - component: {fileID: 33360607930336244}
+  - component: {fileID: 23488809690179096}
+  - component: {fileID: 65395595150830494}
+  m_Layer: 9
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934676440059474}
   - component: {fileID: 108768043262879220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,13 +64,13 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1470686163366806
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4095769770962094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +87,7 @@ GameObject:
   - component: {fileID: 4768459542641892}
   - component: {fileID: 198110758257600802}
   - component: {fileID: 199918663288649428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuer_Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +104,7 @@ GameObject:
   - component: {fileID: 4928175084941762}
   - component: {fileID: 198492897814591464}
   - component: {fileID: 199983416769482258}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuer_Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +121,7 @@ GameObject:
   - component: {fileID: 4319394422154582}
   - component: {fileID: 198588537032285632}
   - component: {fileID: 199236157459480290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuer_Alpha_Blended
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,9 +136,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4836563361165632}
-  - component: {fileID: 33747045542842098}
-  - component: {fileID: 23768733561745650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StandFackel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +153,7 @@ GameObject:
   - component: {fileID: 4603829804219814}
   - component: {fileID: 198853228933402578}
   - component: {fileID: 199132672260026408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Partikeleffekt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +172,7 @@ Transform:
   m_Children:
   - {fileID: 4603829804219814}
   - {fileID: 4934676440059474}
-  m_Father: {fileID: 4836563361165632}
+  m_Father: {fileID: 4344057786579258}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4303066829689622
@@ -185,6 +201,20 @@ Transform:
   m_Father: {fileID: 4603829804219814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
+--- !u!4 &4344057786579258
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024279565500818}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 70.67457, y: 70.67454, z: 70.67454}
+  m_Children:
+  - {fileID: 4095769770962094}
+  m_Father: {fileID: 4836563361165632}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4603829804219814
 Transform:
   m_ObjectHideFlags: 1
@@ -221,11 +251,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1762335369863886}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -22.24, y: 1.47, z: 24.01}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -145.86, y: 8.41, z: 214.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4095769770962094}
+  - {fileID: 4344057786579258}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,12 +285,12 @@ Transform:
   m_Father: {fileID: 4095769770962094}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23768733561745650
+--- !u!23 &23488809690179096
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762335369863886}
+  m_GameObject: {fileID: 1024279565500818}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -289,13 +319,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33747045542842098
+--- !u!33 &33360607930336244
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762335369863886}
+  m_GameObject: {fileID: 1024279565500818}
   m_Mesh: {fileID: 4300000, guid: 0bfb5a293655b1a42b5b108c07fcc6fa, type: 3}
+--- !u!65 &65395595150830494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1024279565500818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009766679, y: 0.009333795, z: 0.05476045}
+  m_Center: {x: 4.656613e-10, y: 2.328306e-10, z: 0.027380228}
 --- !u!108 &108768043262879220
 Light:
   m_ObjectHideFlags: 1

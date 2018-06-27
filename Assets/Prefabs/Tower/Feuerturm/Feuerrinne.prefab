@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4088926329191138}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Modell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4640968350389282}
   - component: {fileID: 33052346174802376}
   - component: {fileID: 23055800926963554}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4151772115339208}
   - component: {fileID: 33421606356228718}
   - component: {fileID: 23024781867404612}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4832201577938768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Feuerrinne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,8 @@ GameObject:
   - component: {fileID: 4035606039390356}
   - component: {fileID: 33581218661475520}
   - component: {fileID: 23789863845011914}
-  m_Layer: 0
+  - component: {fileID: 65152361379525258}
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,8 +154,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583609663132750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.301825, y: 0, z: 26.07474}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -143, y: 8.13, z: 213.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4088926329191138}
@@ -284,3 +285,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776676403040564}
   m_Mesh: {fileID: 4300000, guid: 5681fbed3456bb545ac2287ff2d48d94, type: 3}
+--- !u!65 &65152361379525258
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776676403040564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0038264974, y: 0.020105813, z: 0.01471072}
+  m_Center: {x: 0.002338758, y: 0.000088477136, z: -0.0045417715}
