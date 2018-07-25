@@ -795,7 +795,43 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 82810039581045598, guid: bd85ea8cae97c6040bc2d4127c7727c7,
+    - target: {fileID: 20639054552693192, guid: bd85ea8cae97c6040bc2d4127c7727c7,
+        type: 2}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 212602647623354840, guid: bd85ea8cae97c6040bc2d4127c7727c7,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5cf45b58ec83fe44b7f8a941d0f72af,
+        type: 3}
+    - target: {fileID: 4833186670059808, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833186670059808, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833186670059808, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212602647623354840, guid: bd85ea8cae97c6040bc2d4127c7727c7,
+        type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833186670059808, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833186670059808, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 82442279046387742, guid: bd85ea8cae97c6040bc2d4127c7727c7,
         type: 2}
       propertyPath: OutputAudioMixerGroup
       value: 
