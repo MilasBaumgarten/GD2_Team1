@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreditMovementScript : MonoBehaviour {
+public class IntroMovementScript : MonoBehaviour {
 
 	private Rigidbody2D myRigidbody;
 
@@ -14,15 +14,15 @@ public class CreditMovementScript : MonoBehaviour {
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
 	}
-	
+
 
 	void FixedUpdate () {
-		float vertical = Input.GetAxis ("Vertical");
+		float horizontal = Input.GetAxis ("Horizontal");
 
 		HandleMovement ();		
 	}
 
 	private void HandleMovement(){
-		myRigidbody.velocity = Vector2.up * speed;
+		myRigidbody.velocity = Vector2.left * speed;
 	}
 }
