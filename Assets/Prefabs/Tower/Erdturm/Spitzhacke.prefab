@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4751285697408906}
   - component: {fileID: 33153879938133362}
   - component: {fileID: 23805927372332780}
-  m_Layer: 0
+  - component: {fileID: 65099654852046712}
+  m_Layer: 9
   m_Name: Modell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4086355589729054}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spitzhacke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938362928551496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.77, y: 0, z: -20.01}
+  m_LocalPosition: {x: -103.41, y: 9.06, z: 236.34799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4751285697408906}
@@ -111,3 +112,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813285439214986}
   m_Mesh: {fileID: 4300000, guid: 9a875093bb076e24686e28a1d78f51f7, type: 3}
+--- !u!65 &65099654852046712
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813285439214986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18832183, y: 0.25449333, z: 0.032878947}
+  m_Center: {x: -0.000000014901161, y: 0.07573663, z: 0}

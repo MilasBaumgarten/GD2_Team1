@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4479745702315404}
   - component: {fileID: 33541228797452766}
   - component: {fileID: 23584124154076882}
-  m_Layer: 0
+  - component: {fileID: 65320523167822232}
+  m_Layer: 9
   m_Name: Modell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4872207259862652}
   - component: {fileID: 108948245266863962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4858157218434916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grubenlampe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,14 +66,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175543368590720}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 30}
   m_Children:
   - {fileID: 4872207259862652}
   m_Father: {fileID: 4858157218434916}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!4 &4858157218434916
 Transform:
   m_ObjectHideFlags: 1
@@ -80,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1856979040286950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.7, y: 1.21, z: 0}
+  m_LocalPosition: {x: 25.717041, y: -22.922775, z: 164.27219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4479745702315404}
@@ -143,6 +144,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175543368590720}
   m_Mesh: {fileID: 4300000, guid: 61063b0d72ffd514789b493ccc5827aa, type: 3}
+--- !u!65 &65320523167822232
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175543368590720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026999999, y: 0.026, z: 0.06665865}
+  m_Center: {x: 0.00050000055, y: 0.000000002328306, z: 0.033329327}
 --- !u!108 &108948245266863962
 Light:
   m_ObjectHideFlags: 1
@@ -152,9 +165,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.97794116, g: 0.84186256, b: 0.27324829, a: 1}
-  m_Intensity: 1
-  m_Range: 40
+  m_Color: {r: 0.9632353, g: 0.6891138, b: 0.09915656, a: 1}
+  m_Intensity: 2
+  m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
