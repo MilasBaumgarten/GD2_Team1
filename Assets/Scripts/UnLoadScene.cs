@@ -24,7 +24,7 @@ public class UnLoadScene : MonoBehaviour {
 			foreach (string scene in scenes) {
 				if (!loaded && !isUnloader) {
 					// lade alle angegebenen Szenen, falls nicht schon geschehen
-					SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+					SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
 				} else if (loaded && isUnloader) {
 					// entferne alle angegebenen Szenen, falls diese bereits geladen sind
 					SceneManager.UnloadSceneAsync(scene);
