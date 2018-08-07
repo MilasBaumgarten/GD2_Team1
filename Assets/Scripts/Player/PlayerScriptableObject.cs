@@ -116,6 +116,9 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Die Geschwindigkeit mit der der Spieler die länge der Kette ändern kann")]
     public float reelInSpeed;
 
+    [Tooltip("Die Geschwindigkeit mit der sich die Hand zum Ankerpunkt bewegt")]
+    public float grappleSpeed;
+
     [Tooltip("Grapplet der Spieler gerade?")]
     public bool isGrappled;
     [Space]

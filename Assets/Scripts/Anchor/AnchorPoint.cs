@@ -18,16 +18,19 @@ public class AnchorPoint : MonoBehaviour
     {
         if (DistanceCheck())    // ist der Ankerpunkt in Reichweite wird das Icon aktiviert
         {
-            ActivateAnchor();
+            if (!player.isGrappled)
+            {
+                ActivateAnchor();
+            }
         }
-        
+
     }
 
     private void OnMouseOver()
     {
         if (active) // wird das icon bereits gezeigt oder nicht
         {
-            if (!DistanceCheck())   // ist der Ankerpunkt nicht in Reichweite wird das Icon deaktiviert
+            if (!DistanceCheck() || player.isGrappled)   // ist der Ankerpunkt nicht in Reichweite wird das Icon deaktiviert
             {
                 DisableAnchor();
             }
@@ -36,7 +39,10 @@ public class AnchorPoint : MonoBehaviour
         {
             if (DistanceCheck())    // ist der Ankerpunkt in Reichweite wird das Icon aktiviert
             {
-                ActivateAnchor();
+                if (!player.isGrappled)
+                {
+                    ActivateAnchor();
+                }
             }
         }
     }

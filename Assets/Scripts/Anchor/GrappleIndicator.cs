@@ -16,6 +16,12 @@ public class GrappleIndicator : MonoBehaviour
 
     void Update()
     {
-        transform.position = cam.WorldToScreenPoint(player.grappleTarget.transform.position); // das Icon auf dem Canvas entsprechend der position des Ankerpunkts/Hakens verschieben
+        if (!player.isGrappled)
+        {
+            if(player.grappleTarget != null)
+            {
+                transform.position = cam.WorldToScreenPoint(player.grappleTarget.transform.position); // das Icon auf dem Canvas entsprechend der position des Ankerpunkts/Hakens verschieben
+            }
+        }
     }
 }
