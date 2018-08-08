@@ -16,7 +16,7 @@ public class GrappleIndicator : MonoBehaviour
 
     void Update()
     {
-        if (!player.isGrappled)
+        if (!player.isGrappling && !player.handDetached)
         {
             if(player.grappleTarget != null)
             {

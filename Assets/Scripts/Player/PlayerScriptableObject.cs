@@ -120,7 +120,14 @@ public class PlayerScriptableObject : ScriptableObject
     public float grappleSpeed;
 
     [Tooltip("Grapplet der Spieler gerade?")]
-    public bool isGrappled;
+    public bool isGrappling;
+
+    [Tooltip("Hängt der Spieler an einem Ankerpunkt?")]
+    public bool isAttached;
+
+    [Tooltip("Ist die Hand des Spielers ab?")]
+    public bool handDetached;
+
     [Space]
 
     #region NoClip Bewegung

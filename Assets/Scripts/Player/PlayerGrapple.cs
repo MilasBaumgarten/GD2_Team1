@@ -11,60 +11,68 @@ public class PlayerGrapple : MonoBehaviour
     public Transform tetherEnd;
     public Transform arm;
     public Transform hand;
+    private Transform handParent;
+    private Quaternion handRot;
     private Vector3 handPos;
     private Vector3 grappleDist;
     private Vector3 grappleDir;
     private LineRenderer lineRenderer;
-    private bool handDetached;
-    private bool isAttached;
+    
 
     private void Start()
     {
-        player.isGrappled = false;
+        player.isGrappling = false;
+        player.isAttached = false;
         player.grappleTarget = null;
         lineRenderer = GetComponent<LineRenderer>();
+        handRot = hand.localRotation;
         handPos = hand.localPosition;
+        handParent = hand.parent;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(player.grappleButton))   //Spieler drückt taste zum grapplen
         {
-            if (player.isGrappled)  //wenn Spieler bereits grappled lässt er los
+            if (player.isGrappling)  //wenn Spieler bereits grappled lässt er los
             {
-                player.isGrappled = false;
+                player.isGrappling = false;
             }
             else
             {
                 if (player.grappleIndicator.activeSelf) //ansonsten bei vorhandenem Anker den Anker grapplen
                 {
-                    player.isGrappled = true;
-                    player.anchorPosition = player.grappleTarget.transform.position;
+                    player.isGrappling = true;
+                    if (player.grappleTarget != null)
+                    {
+                        player.anchorPosition = player.grappleTarget.transform.position;
+                    }
                     player.grappleDistance = (this.transform.position - player.anchorPosition).magnitude;
                 }
             }
         }
 
-        if (player.isGrappled)
+        if (player.isGrappling)
         {
             //arm richtung ankerpunk rotieren
 
-            if (!handDetached)
+            if (!player.handDetached)
             {
                 grappleDist = (player.anchorPosition - hand.position);
-                grappleDir = grappleDist.normalized * player.grappleSpeed;
-                handDetached = true;
+                grappleDir = grappleDist.normalized * player.grappleSpeed * Time.deltaTime;
+                hand.parent = null;
+                player.handDetached = true;
             }
-            if (!isAttached)
+            if (!player.isAttached)
             {
                 if (grappleDist.magnitude < grappleDir.magnitude)
                 {
                     hand.position = player.anchorPosition;
-                    isAttached = true;
+                    player.isAttached = true;
                 }
                 else
                 {
-                    hand.position = player.anchorPosition - grappleDist;
+                    hand.position += grappleDir;
                     grappleDist -= grappleDir;
                 }
             }
@@ -74,27 +82,55 @@ public class PlayerGrapple : MonoBehaviour
                 float input = (Input.GetKey(KeyCode.LeftShift) ? -1 : 0) + (Input.GetKey(KeyCode.LeftControl) ? 1 : 0);
                 player.grappleDistance = Mathf.Clamp(player.grappleDistance + input * player.reelInSpeed, 10.0f, player.maxGrappleDistance);
             }
-
-            if (player.anchorPosition != null)
-            {
-                if (!lineRenderer.enabled)
-                {
-
-                    lineRenderer.enabled = true;
-                }
-
-                lineRenderer.SetPositions(new Vector3[2] { tetherEnd.position, tetherOrigin.position });
-            }
         }
         else
         {
-            hand.localPosition = handPos;
-            handDetached = false;
-            isAttached = false;
-            if (lineRenderer.enabled)
+            if (player.handDetached)
             {
-                lineRenderer.enabled = false;
+                if (player.isAttached)
+                {
+                    player.isAttached = false;
+                }
+                else
+                {
+                    if (grappleDist.magnitude < (handParent.TransformPoint(handPos) - hand.position).magnitude)
+                    {
+                        hand.position -= Vector3.Project(grappleDist - (handParent.TransformPoint(handPos) - hand.position), grappleDir);
+                    }
+                }
+
+                grappleDist = handParent.TransformPoint(handPos) - hand.position;
+                grappleDir = grappleDist.normalized * player.grappleSpeed * Time.deltaTime;
+
+                if (grappleDist.magnitude < grappleDir.magnitude)
+                {
+                    hand.parent = handParent;
+                    hand.localRotation = handRot;
+                    hand.localPosition = handPos;
+                    player.handDetached = false;
+                }
+                else
+                {
+                    hand.position += grappleDir;
+                    grappleDist -= grappleDir;
+                }
+
+                hand.LookAt(handParent.TransformPoint(handPos));
+            }
+            else
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                }
             }
         }
+        if (!lineRenderer.enabled)
+        {
+
+            lineRenderer.enabled = true;
+        }
+
+        lineRenderer.SetPositions(new Vector3[2] { tetherEnd.position, tetherOrigin.position });
     }
 }
