@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4020411290688818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Krug_verziehrt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,8 @@ GameObject:
   - component: {fileID: 4573483891839764}
   - component: {fileID: 33984750037973456}
   - component: {fileID: 23887919395820420}
-  m_Layer: 0
+  - component: {fileID: 65752886843794716}
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1127861898203474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -458.33, y: 19.558136, z: -292.97}
+  m_LocalPosition: {x: -102.00989, y: 1.6109562, z: -78.44385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4573483891839764}
@@ -111,3 +112,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1230057950143692}
   m_Mesh: {fileID: 4300000, guid: 1698509938671b44e9f13f8bf02178d1, type: 3}
+--- !u!65 &65752886843794716
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1230057950143692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.291714, y: 6.56509, z: 4.2574224}
+  m_Center: {x: 0, y: 2.0598655, z: 0}
