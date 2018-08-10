@@ -73,6 +73,12 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Taste zum Greifen")]
     public KeyCode grappleButton;
 
+    [Tooltip("Taste zum Kette verkürzen")]
+    public KeyCode reelInButton;
+
+    [Tooltip("Taste zum Kette verlängern")]
+    public KeyCode reelOutButton;
+
     #endregion
 
     [Space]
