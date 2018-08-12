@@ -31,12 +31,15 @@ MonoBehaviour:
   slowDownSpeed: 40
   airControlSpeed: 3
   maxGrappleDistance: 35
-  grappleDistance: 25.625774
+  grappleDistance: 27.983803
   reelInSpeed: 0.25
-  isGrappled: 0
+  grappleSpeed: 50
+  isGrappling: 0
+  isAttached: 0
+  handDetached: 0
   noClip: 0
   noClipSpeed: 20
   noClipSprintMultiplier: 2
   grappleTarget: {fileID: 0}
   grappleIndicator: {fileID: 0}
-  anchorPosition: {x: 291.74, y: 79.099, z: 118.405}
+  anchorPosition: {x: -89.11813, y: 25.499, z: -56.9768}

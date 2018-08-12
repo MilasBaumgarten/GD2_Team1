@@ -73,6 +73,12 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Taste zum Greifen")]
     public KeyCode grappleButton;
 
+    [Tooltip("Taste zum Kette verkürzen")]
+    public KeyCode reelInButton;
+
+    [Tooltip("Taste zum Kette verlängern")]
+    public KeyCode reelOutButton;
+
     #endregion
 
     [Space]
@@ -116,8 +122,18 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Die Geschwindigkeit mit der der Spieler die länge der Kette ändern kann")]
     public float reelInSpeed;
 
+    [Tooltip("Die Geschwindigkeit mit der sich die Hand zum Ankerpunkt bewegt")]
+    public float grappleSpeed;
+
     [Tooltip("Grapplet der Spieler gerade?")]
-    public bool isGrappled;
+    public bool isGrappling;
+
+    [Tooltip("Hängt der Spieler an einem Ankerpunkt?")]
+    public bool isAttached;
+
+    [Tooltip("Ist die Hand des Spielers ab?")]
+    public bool handDetached;
+
     [Space]
 
     #region NoClip Bewegung

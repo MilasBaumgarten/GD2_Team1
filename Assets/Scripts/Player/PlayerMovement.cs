@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else    //Spieler befindet sich nicht auf dem Boden
             {
-                if (velocity.y < 0.0f || player.isGrappled)   //Spieler steigt
+                if (velocity.y < 0.0f || player.isAttached)   //Spieler steigt
                 {
                     velocity.y += gravity * player.fallMultiplier * Time.deltaTime;  //vertikaler Geschwindigkeit die Fallbeschleunigung mit Multiplikator abziehen
                 }
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
                     velocity = new Vector3(temp.x, velocity.y, temp.z); //neue Bewegungsgeschwindigkeit berechnen
                 }
             }
-            if (player.isGrappled)  //Spieler ist eingehakt
+            if (player.isAttached)  //Spieler ist eingehakt
             {
                 Vector3 testPosition = this.transform.position + velocity * Time.deltaTime; //Position, wo der Spieler sich im nächsten Frame befinden würde
                 Vector3 dist = transform.position - player.anchorPosition;
