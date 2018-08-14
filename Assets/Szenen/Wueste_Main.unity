@@ -44463,6 +44463,11 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.45982918
       objectReference: {fileID: 0}
+    - target: {fileID: 198016458074024230, guid: e54b059fe351fe74cb63cf0899fb36bd,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1809528265
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e54b059fe351fe74cb63cf0899fb36bd, type: 2}
   m_IsPrefabParent: 0
@@ -61080,7 +61085,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4419748886366638, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
