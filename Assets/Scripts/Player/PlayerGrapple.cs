@@ -39,7 +39,7 @@ public class PlayerGrapple : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(player.grappleButton))   //Spieler drückt taste zum grapplen
+        if (Input.GetKeyDown(player.grappleButton) || Input.GetKeyDown(player.altGrappleButton))   //Spieler drückt taste zum grapplen
         {
             if (player.isGrappling)  //wenn Spieler bereits grappled lässt er los
             {

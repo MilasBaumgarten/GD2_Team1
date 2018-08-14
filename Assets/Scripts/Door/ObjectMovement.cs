@@ -21,7 +21,8 @@ public class ObjectMovement : MonoBehaviour {
     //Kurve für die Animation
     public AnimationCurve accelCurve;
 
-    public bool activate = false;
+    private bool activate = false;
+	private bool reset = false;
 
     //Evt TürSound
     public AudioSource onStartAudio;
@@ -36,23 +37,39 @@ public class ObjectMovement : MonoBehaviour {
     protected CharacterController test;
 
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        PerformInteraction();
+		if (other.tag == "Player") {
+			PerformInteraction();
+		}
     }
 
-    public void PerformInteraction()
+	private void OnTriggerExit(Collider other) {
+		if (other.tag == "Player") {
+			ResetInteraction();
+		}
+	}
+
+	private void PerformInteraction()
     {
+		time = (time > 1) ? 0 : time;
+		reset = false;
         activate = true;
         if (onStartAudio != null) onStartAudio.Play();
     }
 
+	public void ResetInteraction() {
+		time = (time > 1) ? 1 : time;
+		activate = false;
+		reset = true;
+	}
 
-    public void FixedUpdate()
+
+	public void FixedUpdate()
     {
         if(activate)
         {
-            time = time + (direction * Time.deltaTime / duration);
+            time += (direction * Time.deltaTime / duration);
             switch(loopType)
             {
                 case LoopType.Once:
@@ -67,6 +84,17 @@ public class ObjectMovement : MonoBehaviour {
             }
             PerformTransform(position);
         }
+
+		if (reset) {
+			time -= (direction * Time.deltaTime / duration);
+
+			position = Mathf.Clamp01(time);
+			if (position <= 0) {
+				reset = false;
+			}
+
+			PerformTransform(position);
+		}
     }
 
     public void PerformTransform(float position)
@@ -96,7 +124,7 @@ public class ObjectMovement : MonoBehaviour {
         position = Mathf.Clamp01(time);
         if(position >= 1)
         {
-            enabled = false;
+            activate = false;
         }
     }
 

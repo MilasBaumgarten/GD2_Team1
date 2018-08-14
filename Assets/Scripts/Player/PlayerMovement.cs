@@ -123,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(velocity * Time.deltaTime);   //Spieler Bewegen
         }
         #endregion
+        player.isGrounded = controller.isGrounded;
     }
 
     private void ToggleNoClip() //Schaltet zwischen NoClip und normaler bewegung um
