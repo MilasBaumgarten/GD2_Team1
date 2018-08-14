@@ -18,6 +18,8 @@ public class ChangeGameSettings : MonoBehaviour {
     public InputField explosionRadius;
     public Toggle infAmmo;
 
+    public Slider mouseSensitivity;
+
     //Startwerte für die Settings abfragen
     private void Start()
     {
@@ -34,6 +36,7 @@ public class ChangeGameSettings : MonoBehaviour {
         movementSpeed.text = string.Format("{0:N2}", player.moveSpeed);
         explosionForce.text = string.Format("{0:N2}", explosion.explosionForce);
         explosionRadius.text = string.Format("{0:N2}", explosion.radius);
+        mouseSensitivity.value = player.v_sens;
 
         if (projectile.infAmmo == true)//keine munitionseingabe möglich machen, unendlich munition aktiviert ist
         {

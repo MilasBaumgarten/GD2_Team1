@@ -7,8 +7,12 @@ public class PauseGame : MonoBehaviour {
     public Transform canvas;
     public Transform pauseMenu;
     public Transform settingsMenu;
+    public Transform s_Controlls;
+    public Transform s_Audio;
+    public Transform s_Debug;
 
-	void Update () {
+
+    void Update () {
 	if(Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
@@ -64,18 +68,25 @@ public class PauseGame : MonoBehaviour {
         {
             settingsMenu.gameObject.SetActive(true);
             pauseMenu.gameObject.SetActive(false);
+            s_Controlls.gameObject.SetActive(true);
         }
         if(!Open)
         {
             settingsMenu.gameObject.SetActive(false);
             pauseMenu.gameObject.SetActive(true);
+            s_Audio.gameObject.SetActive(false);
+            s_Debug.gameObject.SetActive(false);
         }
     }
 
 
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 
 }
