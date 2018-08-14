@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootProjectile : MonoBehaviour {
 
     public ProjectileScriptableObject projectile;
+    public PlayerScriptableObject player;
 
 	private float nextFire = 0.0f;
     private int currentAmmo;
@@ -21,14 +22,19 @@ public class ShootProjectile : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time > nextFire && Time.timeScale > 0)
+        if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && nextFire <= 0)
         {
             Fire();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (player.isGrounded && currentAmmo < projectile.maxAmmo)
         {
             Reload();
+        }
+
+        if(nextFire > 0)
+        {
+            nextFire -= Time.deltaTime;
         }
 	}
 
@@ -49,6 +55,8 @@ public class ShootProjectile : MonoBehaviour {
 		GameObject spawn = Instantiate(projectile.rocket, transform.position, transform.rotation);
 		spawn.GetComponent<ProjectileMove>().hit = hit;
 
+        nextFire += projectile.fireRate;
+
         //Spielt Soundeffekt ab
         source.Play();
 
@@ -60,9 +68,6 @@ public class ShootProjectile : MonoBehaviour {
         {
             currentAmmo--;
         }
-
-        //Zeit vor erneutem schießen
-		nextFire = Time.time + projectile.fireRate;
 	}
 
     void Reload()

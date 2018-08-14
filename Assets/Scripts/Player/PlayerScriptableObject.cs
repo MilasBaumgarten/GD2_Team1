@@ -73,6 +73,9 @@ public class PlayerScriptableObject : ScriptableObject
     [Tooltip("Taste zum Greifen")]
     public KeyCode grappleButton;
 
+    [Tooltip("Alternative Taste zum Greifen")]
+    public KeyCode altGrappleButton;
+
     [Tooltip("Taste zum Kette verkürzen")]
     public KeyCode reelInButton;
 
@@ -133,6 +136,9 @@ public class PlayerScriptableObject : ScriptableObject
 
     [Tooltip("Ist die Hand des Spielers ab?")]
     public bool handDetached;
+
+    [Tooltip("Ist der Spieler im Kontakt mit dem Boden?")]
+    public bool isGrounded;
 
     [Space]
 
