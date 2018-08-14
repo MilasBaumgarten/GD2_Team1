@@ -125,6 +125,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1536666558308310
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4143052444825444}
+  m_Layer: 10
+  m_Name: TetherEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1568431796623350
 GameObject:
   m_ObjectHideFlags: 1
@@ -223,8 +238,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4532786115562980}
+  - {fileID: 4924776925347472}
   m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 4
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4143052444825444
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536666558308310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.74, y: 1.08, z: 7.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4182600486758018}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4143884425444160
 Transform:
@@ -250,7 +279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4182600486758018
 Transform:
@@ -263,6 +292,7 @@ Transform:
   m_LocalScale: {x: 0.0011648193, y: 0.0012806767, z: 0.0012781263}
   m_Children:
   - {fileID: 4782731549613590}
+  - {fileID: 4143052444825444}
   m_Father: {fileID: 4532786115562980}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 254.866, y: 409.236, z: -274.798}
@@ -277,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4532786115562980
 Transform:
@@ -319,7 +349,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4924776925347472}
   - {fileID: 4833186670059808}
   - {fileID: 4274400781228222}
   - {fileID: 4154097294244564}
@@ -351,7 +380,7 @@ Transform:
   m_LocalScale: {x: 0.008, y: 0.008, z: 1}
   m_Children: []
   m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4924776925347472
 Transform:
@@ -360,11 +389,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1208538814859264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: -0.15500641, y: -0.27900028, z: 1.678009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4745747305672104}
-  m_RootOrder: 0
+  m_Father: {fileID: 4032178040913394}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4980893688396672
 Transform:
@@ -721,7 +750,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 11400000, guid: ecfc08f39f9ac324db5c197082aa1ec2, type: 2}
-  hand: {fileID: 4924776925347472}
+  tetherOrigin: {fileID: 4924776925347472}
+  tetherEnd: {fileID: 4143052444825444}
+  arm: {fileID: 4032178040913394}
+  hand: {fileID: 4182600486758018}
 --- !u!114 &114660801661165858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -807,7 +839,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: af2ec596077761f48bdf0325212ca5a4, type: 2}
+  - {fileID: 2100000, guid: 4df80eeb6ee084047ad08a0436a54c49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -832,7 +864,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -877,10 +909,10 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     generateLightingData: 0
   m_UseWorldSpace: 1
-  m_Loop: 1
+  m_Loop: 0
 --- !u!143 &143999573106320020
 CharacterController:
   m_ObjectHideFlags: 1
