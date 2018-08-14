@@ -5,19 +5,22 @@ using System;
 
 public class SaveLoadGame : MonoBehaviour {
 
-    public Transform tPlayer;
+    //public Transform tPlayer;
     public ProjectileScriptableObject projectile;
     public PlayerScriptableObject player;
     public ExplosionScriptableObject explosion;
 
     //Spielerposition speichern
-	public void SavePlayerPosition()
+    //
+    //      Auskommentiert da vorerst nicht mehr benötigt
+    //
+	/*public void SavePlayerPosition()
     {
         PlayerPrefs.SetFloat("x", tPlayer.position.x);
         PlayerPrefs.SetFloat("y", tPlayer.position.y);
         PlayerPrefs.SetFloat("z", tPlayer.position.z);
         PlayerPrefs.SetFloat("camY", tPlayer.eulerAngles.y);
-    }
+    }*/
     //Settings speichern
     public void SaveSettings()
     {
@@ -32,12 +35,16 @@ public class SaveLoadGame : MonoBehaviour {
         PlayerPrefs.SetFloat("explosionForce", explosion.explosionForce);
         PlayerPrefs.SetFloat("explosionRadius", explosion.radius);
     }
+
+    //
+    //      Auskommentiert da vorerst nicht mehr benötigt
+    //
     //Spielerposition laden
-    public void LoadPlayerPosition()
+    /*public void LoadPlayerPosition()
     {
         tPlayer.position = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
         tPlayer.eulerAngles = new Vector3(0, PlayerPrefs.GetFloat("camY"), 0);
-    }
+    }*/
     //Settings laden
     public void LoadSettings()
     {

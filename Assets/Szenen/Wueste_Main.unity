@@ -1309,6 +1309,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114287513636370184, guid: 00c3e03246976aa4c85b93804572ea9d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadFile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88c20f3bfff45a2448d4030e261ede8d, type: 2}
   m_IsPrefabParent: 0
@@ -2599,6 +2604,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 764b81520705dc643887859593a14eab, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 --- !u!4 &64971770 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4376711422910698, guid: 764b81520705dc643887859593a14eab,
@@ -2606,6 +2612,63 @@ Transform:
   m_PrefabInternal: {fileID: 64971769}
 --- !u!1001 &80627724
 Prefab:
+=======
+--- !u!1 &1106736870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1106736871}
+  - component: {fileID: 1106736873}
+  - component: {fileID: 1106736872}
+  m_Layer: 0
+  m_Name: Checkpoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1106736871
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106736870}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -86.09, y: 4.45, z: -20.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1526659810}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106736872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106736870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472d7f2f6c9eee24a9de3625e97db649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1106736873
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106736870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 14, y: 5, z: 14}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1152562456
+GameObject:
+>>>>>>> Chris_SaveLoading
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -57161,6 +57224,7 @@ Prefab:
     - target: {fileID: 4280836801472794, guid: 88c20f3bfff45a2448d4030e261ede8d, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 1414402218327546, guid: 88c20f3bfff45a2448d4030e261ede8d, type: 2}
       propertyPath: m_Layer
@@ -57178,6 +57242,26 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: 88c20f3bfff45a2448d4030e261ede8d, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1967327844 stripped
+=======
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  activate: 0
+  openTime: 10
+  onStartAudio: {fileID: 0}
+  onEndAudio: {fileID: 0}
+  previewPosition: 0
+--- !u!4 &1271858675
+>>>>>>> Chris_SaveLoading
 Transform:
   m_PrefabParentObject: {fileID: 4280836801472794, guid: 88c20f3bfff45a2448d4030e261ede8d,
     type: 2}
@@ -61112,10 +61196,27 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!4 &2098263117 stripped
 Transform:
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 4280836801472794, guid: 88c20f3bfff45a2448d4030e261ede8d,
     type: 2}
   m_PrefabInternal: {fileID: 2098263116}
 --- !u!1 &2103943561 stripped
+=======
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1526659809}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.000015258789, z: 0.000015258789}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 679833917}
+  - {fileID: 1106736871}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1532926544
+>>>>>>> Chris_SaveLoading
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 10bd4f4053a53794aa73ce08e4b9568a, type: 3}
   m_PrefabInternal: {fileID: 403414669}
