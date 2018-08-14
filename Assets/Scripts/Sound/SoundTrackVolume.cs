@@ -13,11 +13,15 @@ public class SoundTrackVolume : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        soundTrack.TrackHinzufuegen(this.name);
+		if (other.tag == "Player") {
+			soundTrack.TrackHinzufuegen(this.name);
+		}
     }
 
     void OnTriggerExit(Collider other)
     {
-        soundTrack.TrackEntfernen();
+		if (other.tag == "Player") {
+			soundTrack.TrackEntfernen();
+		}
     }
 }

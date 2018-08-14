@@ -59,7 +59,6 @@ public class ObjectMovement : MonoBehaviour {
     }
 
 	public void ResetInteraction() {
-		//time = (time > 1) ? 0 : 1 - time;
 		time = (time > 1) ? 1 : time;
 		activate = false;
 		reset = true;

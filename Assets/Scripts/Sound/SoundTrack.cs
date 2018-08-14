@@ -20,6 +20,10 @@ public class SoundTrack : MonoBehaviour {
     //Track wird am Anfang des Stacks eingefügt
     public void TrackHinzufuegen(string name)
     {
+		if (trackStack.Count > 0) {
+			trackStack.Pop();
+		}
+
         trackStack.Push(name);
         Einreihen(name);
     }
@@ -27,9 +31,7 @@ public class SoundTrack : MonoBehaviour {
     //Track wird aus dem Stack entfernt, wenn dieser über mehr als einen Track verfügt
     public void TrackEntfernen()
     {
-        if (trackStack.Count > 1)
-            trackStack.Pop();
-        Einreihen(trackStack.Peek());
+        trackStack.Pop();
     }
 
     //Spielt den genannten Track aus dem stack ab
@@ -83,8 +85,15 @@ public class SoundTrack : MonoBehaviour {
 
     void Update()
     {
-        if (activeAudio != null)
-            activeAudio.volume = Mathf.SmoothDamp(activeAudio.volume, volume * soundTrackVolume, ref volumeVelocity, fadeZeit, 1);
+		Debug.Log(trackStack.Count);
+		if (trackStack.Count == 0) {
+			trackStack.Push(audioSources[0].name);
+			Einreihen(audioSources[0].name);
+		}
+
+		if (activeAudio != null) {
+			activeAudio.volume = Mathf.SmoothDamp(activeAudio.volume, volume * soundTrackVolume, ref volumeVelocity, fadeZeit, 1);
+		}
 
         if (fadeAudio != null)
         {
