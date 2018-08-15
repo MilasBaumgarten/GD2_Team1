@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerScriptableObject player;   //Referenz zum PlayerScriptableObject
+    public Animator animator;
     private CharacterController controller; //Referenz zum CharacterController
 
     private Vector3 velocity;   //Vektor mit dem bewegt wird
@@ -56,10 +58,12 @@ public class PlayerMovement : MonoBehaviour
                 }
                 if (inputDirection.Equals(Vector3.zero))    //Spieler macht keinen Input
                 {
+                    animator.SetBool("isMoving", false);
                     velocity -= velocity.normalized * player.slowDownSpeed * Time.deltaTime;    //Geschwindigkeit linear verringern
                 }
                 else
                 {
+                    animator.SetBool("isMoving", true);
                     velocity = Vector3.ClampMagnitude(velocity + inputDirection, player.moveSpeed); //Geschwindigkeit gleicht dem Input des Spielers
                 }
                 if (Input.GetKey(player.jumpButton))    //bei Drücken der Sprungtaste springen
@@ -112,10 +116,10 @@ public class PlayerMovement : MonoBehaviour
 
                 if (testDist.magnitude > player.grappleDistance)    //Spieler würde sich außerhalb der grappleDistance begeben
                 {
-                    testPosition  = player.anchorPosition + testDist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
+                    testPosition = player.anchorPosition + testDist.normalized * player.grappleDistance; //Testposition auf Kreisbahn halten
                     velocity = (testPosition - this.transform.position).normalized * velocity.magnitude;    //Geschwindigkeit des Spielers ändern
                 }
-                if(dist.magnitude > player.grappleDistance)
+                if (dist.magnitude > player.grappleDistance)
                 {
                     velocity -= dist - Vector3.ClampMagnitude(dist, player.grappleDistance);
                 }
@@ -124,6 +128,15 @@ public class PlayerMovement : MonoBehaviour
         }
         #endregion
         player.isGrounded = controller.isGrounded;
+
+        if (Physics.Raycast(this.transform.position, Vector3.down, controller.height / 2 + 0.1f, 1 << LayerMask.NameToLayer("Environment"))) //grounded
+        {
+            animator.SetBool("isGrounded", true);
+        }
+        else
+        {
+            animator.SetBool("isGrounded", false);
+        }
     }
 
     private void ToggleNoClip() //Schaltet zwischen NoClip und normaler bewegung um
@@ -144,8 +157,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CeilingCheck() //Schaut nach ob sich etwas über dem Spieler befindet
     {
-        RaycastHit hit;
-        if (Physics.Raycast(this.transform.position, Vector3.up, out hit, controller.height / 2 + 0.005f, 1 << LayerMask.NameToLayer("Environment")) && velocity.y > 0) //bonks his head
+        if (Physics.Raycast(this.transform.position, Vector3.up, controller.height / 2 + 0.005f, 1 << LayerMask.NameToLayer("Environment")) && velocity.y > 0) //bonks his head
         {
             velocity.y = 0.0f;   //oof
         }
