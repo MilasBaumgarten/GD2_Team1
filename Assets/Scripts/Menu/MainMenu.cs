@@ -18,7 +18,8 @@ public class MainMenu : MonoBehaviour {
     {
         DontDestroyOnLoad(this.gameObject);
         AsyncOperation load = SceneManager.LoadSceneAsync("Wueste_Main");
-        while (!load.isDone)
+		SceneManager.LoadSceneAsync("Deko Wueste");
+		while (!load.isDone)
         {
             yield return null;
         }

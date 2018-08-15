@@ -8,11 +8,12 @@ public class CristalTrigger : MonoBehaviour {
     public bool isActive = false;
     public void OnTriggerEnter(Collider other)
     {
-        if(!isActive)
-        {
-            light.SetActive(true);
-            Debug.Log("Licht");
-        }
+		if (other.tag == "Player") {
+			if (!isActive) {
+				light.SetActive(true);
+				Debug.Log("Licht");
+			}
+		}
     }
 
 

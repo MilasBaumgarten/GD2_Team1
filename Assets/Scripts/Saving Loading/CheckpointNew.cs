@@ -14,13 +14,15 @@ public class CheckpointNew : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerCheckpoint controller = other.GetComponent<PlayerCheckpoint>();
+		if (other.tag == "Player") {
+			PlayerCheckpoint controller = other.GetComponent<PlayerCheckpoint>();
 
-        if (controller == null)
-            return;
+			if (controller == null)
+				return;
 
-        controller.SetCheckpoint(this);
-        Debug.Log(this.gameObject.name);
+			controller.SetCheckpoint(this);
+			Debug.Log(this.gameObject.name);
+		}
     }
 
     private void OnDrawGizmos()
