@@ -4,9 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class CheckpointNew : MonoBehaviour {
+
+
     private void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer("Checkpoint");
+        print(Application.persistentDataPath);
     }
 
     private void OnTriggerEnter(Collider other)
