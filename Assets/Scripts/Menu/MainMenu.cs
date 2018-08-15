@@ -7,7 +7,8 @@ public class MainMenu : MonoBehaviour {
     public void StartGame()
     {
         SceneManager.LoadSceneAsync("Wueste_Main");
-    }
+		SceneManager.LoadSceneAsync("Deko Wueste", LoadSceneMode.Additive);
+	}
 
     public void ResumeGame()
     {
@@ -18,7 +19,7 @@ public class MainMenu : MonoBehaviour {
     {
         DontDestroyOnLoad(this.gameObject);
         AsyncOperation load = SceneManager.LoadSceneAsync("Wueste_Main");
-		SceneManager.LoadSceneAsync("Deko Wueste");
+		SceneManager.LoadSceneAsync("Deko Wueste", LoadSceneMode.Additive);
 		while (!load.isDone)
         {
             yield return null;
