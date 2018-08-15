@@ -58,12 +58,8 @@ Shader "Shader Forge/ParticleTest" {
                 float4 _Texture_var = tex2D(_Texture,TRANSFORM_TEX(i.uv0, _Texture));
                 float3 emissive = (_Color.rgb+_Texture_var.b);
                 float3 finalColor = emissive;
-                float node_2354 = pow(_Texture_var.b,1.3);
                 float4 node_3258 = _Time;
-                float node_5834 = (node_3258.g*_Speed);
-                float node_537 = sin(node_5834);
-                float node_1389 = (node_2354+(-1*abs(node_537)));
-                return fixed4(finalColor,saturate(node_1389));
+                return fixed4(finalColor,saturate((pow(_Texture_var.b,1.3)+(-1*abs(sin((node_3258.g*_Speed)))))));
             }
             ENDCG
         }

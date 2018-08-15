@@ -13,7 +13,7 @@ Shader "Shader Forge/Intro_normal" {
     }
     SubShader {
         Tags {
-            "RenderType"="Opaque"
+            "RenderType"="Transparent" "Queue"="Transparent"
         }
         Pass {
             Name "FORWARD"
@@ -21,6 +21,7 @@ Shader "Shader Forge/Intro_normal" {
                 "LightMode"="ForwardBase"
             }
             Cull Off
+			Blend SrcAlpha OneMinusSrcAlpha
             
             
             CGPROGRAM
@@ -93,7 +94,7 @@ Shader "Shader Forge/Intro_normal" {
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
 /// Final Color:
                 float3 finalColor = diffuse;
-                fixed4 finalRGBA = fixed4(finalColor,1);
+                fixed4 finalRGBA = fixed4(finalColor, _Mask_var.r);
                 UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
                 return finalRGBA;
             }
