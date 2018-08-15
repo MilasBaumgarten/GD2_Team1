@@ -5,15 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Szenen/Combined.unity
-    guid: 86f4ea792aaae4347933524685a36706
   - enabled: 1
     path: Assets/Szenen/Wueste_Main.unity
     guid: 2a61f8df2f4f8c8499bc19e44051540f
   - enabled: 1
+    path: Assets/Szenen/Erdturm.unity
+    guid: 88285d2bd97ccc843abca45f6ba5eccc
+  - enabled: 1
+    path: Assets/Szenen/Feuerturm.unity
+    guid: d46c913ceb7deeb45a44996fe9eb32a7
+  - enabled: 1
+    path: Assets/Szenen/Wasserturm.unity
+    guid: 270c16a9e88320c4f9f4e35b39d8e661
+  - enabled: 1
+    path: Assets/Szenen/Windturm.unity
+    guid: ed9b13c104e769548aa4868541ae17a3
+  - enabled: 1
+    path: Assets/Szenen/Zeitturm.unity
+    guid: b9dd685d107dc2247bee964b0b584bd5
+  - enabled: 1
     path: Assets/Szenen/Dekoszene/Deko Erdturm.unity
     guid: b7ab28fdc0ff8d140b2de4c716395944
   - enabled: 1
-    path: Assets/Szenen/Erdturm.unity
-    guid: 88285d2bd97ccc843abca45f6ba5eccc
+    path: Assets/Szenen/Dekoszene/Deko Wasserturm.unity
+    guid: f76444f7041fbf247b13047c2fef1fb8
+  - enabled: 1
+    path: Assets/Szenen/Dekoszene/Deko Feuerturm.unity
+    guid: f76f53e450ef6394c89e0a78d57378dd
+  - enabled: 1
+    path: Assets/Szenen/Dekoszene/Deko Zeitturm.unity
+    guid: 3131317bd82357e4090061040f07f943

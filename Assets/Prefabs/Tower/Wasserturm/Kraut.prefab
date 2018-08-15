@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4399686759727218}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Kraut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4312354661582190}
   - component: {fileID: 33656487415163778}
   - component: {fileID: 23191586773150218}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: kraut_fixedV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +83,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: aae4b3b8b313d4b409ede8ef88963cf9, type: 2}
   m_StaticBatchInfo:
