@@ -36,6 +36,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4516168478238570}
+  - component: {fileID: 65496834478677416}
+  - component: {fileID: 114319111815366632}
   m_Layer: 9
   m_Name: KristalErdturm
   m_TagString: Untagged
@@ -58,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4084077338941660
 Transform:
   m_ObjectHideFlags: 1
@@ -141,6 +143,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1350774315274012}
   m_Mesh: {fileID: 4300000, guid: 32b587617cf0b5843823f35c76120041, type: 3}
+--- !u!65 &65496834478677416
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761936224399730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 5, z: 15}
+  m_Center: {x: 0, y: -3, z: 0}
 --- !u!108 &108039250178759704
 Light:
   m_ObjectHideFlags: 1
@@ -177,3 +191,16 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114319111815366632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761936224399730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363495b02b9317d408b70b4266b0d847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 1946644834632372}
+  isActive: 0
