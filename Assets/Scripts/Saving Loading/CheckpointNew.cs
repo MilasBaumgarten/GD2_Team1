@@ -8,7 +8,7 @@ public class CheckpointNew : MonoBehaviour {
 
     private void Awake()
     {
-        gameObject.layer = LayerMask.NameToLayer("Checkpoint");
+        gameObject.layer = LayerMask.NameToLayer("Trigger");
         print(Application.persistentDataPath);
     }
 
