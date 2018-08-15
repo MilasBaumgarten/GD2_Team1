@@ -251,9 +251,9 @@ MonoBehaviour:
   scenes:
   - Erdturm
   - Deko Erdturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1317686721}
   - {fileID: 6152439}
@@ -2077,9 +2077,9 @@ MonoBehaviour:
   scenes:
   - Zeitturm
   - Deko Zeitturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1836962864}
   - {fileID: 1550009269}
@@ -3515,9 +3515,9 @@ MonoBehaviour:
   scenes:
   - Feuerturm
   - Deko Feuerturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1621149399}
   - {fileID: 213166148}
@@ -6009,9 +6009,9 @@ MonoBehaviour:
   scenes:
   - Feuerturm
   - Deko Feuerturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1621149399}
   - {fileID: 213166148}
@@ -8021,6 +8021,11 @@ Prefab:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114312586875629868, guid: 00c3e03246976aa4c85b93804572ea9d,
+        type: 2}
+      propertyPath: mouseSensitivity
+      value: 
+      objectReference: {fileID: 2062090561}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00c3e03246976aa4c85b93804572ea9d, type: 2}
   m_IsPrefabParent: 0
@@ -8929,23 +8934,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!114 &310492810 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114660801661165858, guid: bd85ea8cae97c6040bc2d4127c7727c7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061095874}
-  m_Script: {fileID: 11500000, guid: 5b3dd24c1f54b5a4f9d1654a135acfe6, type: 3}
---- !u!143 &310492811 stripped
-CharacterController:
-  m_PrefabParentObject: {fileID: 143999573106320020, guid: bd85ea8cae97c6040bc2d4127c7727c7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061095874}
---- !u!114 &310492813 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114814438375107240, guid: bd85ea8cae97c6040bc2d4127c7727c7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061095874}
-  m_Script: {fileID: 11500000, guid: b7ffdd4e364995b4f9b2e42e08d013a5, type: 3}
 --- !u!1001 &312557482
 Prefab:
   m_ObjectHideFlags: 0
@@ -14525,9 +14513,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -17006,9 +16994,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -18466,6 +18454,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &712805187
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 296.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -70.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168984890198448, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705823501779556, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8fb1ee47fd3cdb04196f511fe82c78a5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &712821577
 Prefab:
   m_ObjectHideFlags: 0
@@ -18589,9 +18623,9 @@ MonoBehaviour:
   scenes:
   - Wasserturm
   - Deko Wasserturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 2086935599}
   - {fileID: 2137984030}
@@ -20863,9 +20897,9 @@ MonoBehaviour:
   scenes:
   - Zeitturm
   - Deko Zeitturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1836962864}
   - {fileID: 1550009269}
@@ -22241,9 +22275,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -25663,9 +25697,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -28188,53 +28222,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4280836801472794, guid: 88c20f3bfff45a2448d4030e261ede8d,
     type: 2}
   m_PrefabInternal: {fileID: 1053959320}
---- !u!1001 &1061095874
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 323
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740126720446036, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 82442279046387742, guid: bd85ea8cae97c6040bc2d4127c7727c7,
-        type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: fc350714777182e4c9631999ea38377b, type: 3}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: bd85ea8cae97c6040bc2d4127c7727c7, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1061394311
 Prefab:
   m_ObjectHideFlags: 0
@@ -29079,9 +29066,9 @@ MonoBehaviour:
   scenes:
   - Feuerturm
   - Deko Feuerturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1621149399}
   - {fileID: 213166148}
@@ -29945,9 +29932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -30425,9 +30412,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -32477,9 +32464,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -33481,9 +33468,9 @@ MonoBehaviour:
   scenes:
   - Erdturm
   - Deko Erdturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1317686721}
   - {fileID: 6152439}
@@ -35512,9 +35499,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -36097,9 +36084,9 @@ MonoBehaviour:
   scenes:
   - Erdturm
   - Deko Erdturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1317686721}
   - {fileID: 6152439}
@@ -39904,9 +39891,9 @@ MonoBehaviour:
   scenes:
   - Wasserturm
   - Deko Wasserturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 2086935599}
   - {fileID: 2137984030}
@@ -43869,9 +43856,9 @@ MonoBehaviour:
   scenes:
   - Zeitturm
   - Deko Zeitturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1836962864}
   - {fileID: 1550009269}
@@ -45497,9 +45484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -46349,17 +46336,17 @@ Prefab:
         type: 2}
       propertyPath: playerLook
       value: 
-      objectReference: {fileID: 310492813}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 310492810}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 310492811}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
   m_IsPrefabParent: 0
@@ -47351,17 +47338,17 @@ Prefab:
         type: 2}
       propertyPath: playerLook
       value: 
-      objectReference: {fileID: 310492813}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 310492810}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 310492811}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
   m_IsPrefabParent: 0
@@ -48377,9 +48364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -50620,9 +50607,9 @@ MonoBehaviour:
   scenes:
   - Wasserturm
   - Deko Wasserturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 2086935599}
   - {fileID: 2137984030}
@@ -52042,9 +52029,9 @@ MonoBehaviour:
   scenes:
   - Erdturm
   - Deko Erdturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1317686721}
   - {fileID: 6152439}
@@ -53771,17 +53758,17 @@ Prefab:
         type: 2}
       propertyPath: playerLook
       value: 
-      objectReference: {fileID: 310492813}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 310492810}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 310492811}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
   m_IsPrefabParent: 0
@@ -55059,7 +55046,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1886979222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323, y: -21, z: -17}
+  m_LocalPosition: {x: 296.6, y: -21, z: -70.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57501,9 +57488,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - Windturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1597147839}
   - {fileID: 1117481064}
@@ -59607,6 +59594,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4280836801472794, guid: 88c20f3bfff45a2448d4030e261ede8d,
     type: 2}
   m_PrefabInternal: {fileID: 2058229250}
+--- !u!114 &2062090561 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114217802081454178, guid: 00c3e03246976aa4c85b93804572ea9d,
+    type: 2}
+  m_PrefabInternal: {fileID: 278921308}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &2064324627
 Prefab:
   m_ObjectHideFlags: 0
@@ -60220,17 +60213,17 @@ Prefab:
         type: 2}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 310492810}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerLook
       value: 
-      objectReference: {fileID: 310492813}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 310492811}
+      objectReference: {fileID: 0}
     - target: {fileID: 65022804799418892, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: m_Size.x
@@ -60372,9 +60365,9 @@ MonoBehaviour:
   scenes:
   - Zeitturm
   - Deko Zeitturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1836962864}
   - {fileID: 1550009269}
@@ -61868,17 +61861,17 @@ Prefab:
         type: 2}
       propertyPath: playerLook
       value: 
-      objectReference: {fileID: 310492813}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerMovement
       value: 
-      objectReference: {fileID: 310492810}
+      objectReference: {fileID: 0}
     - target: {fileID: 114750225278746470, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 310492811}
+      objectReference: {fileID: 0}
     - target: {fileID: 65022804799418892, guid: 6c9a17fa07d35e64fa57dd90e9195da6,
         type: 2}
       propertyPath: m_Size.z
@@ -61899,6 +61892,10 @@ Prefab:
       propertyPath: trigger.Array.data[4]
       value: 
       objectReference: {fileID: 1479097120}
+    - target: {fileID: 1010805210134608, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c9a17fa07d35e64fa57dd90e9195da6, type: 2}
   m_IsPrefabParent: 0
@@ -62012,9 +62009,9 @@ MonoBehaviour:
   scenes:
   - Feuerturm
   - Deko Feuerturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 1621149399}
   - {fileID: 213166148}
@@ -62531,9 +62528,9 @@ MonoBehaviour:
   scenes:
   - Wasserturm
   - Deko Wasserturm
-  playerMovement: {fileID: 310492810}
-  playerLook: {fileID: 310492813}
-  playerController: {fileID: 310492811}
+  playerMovement: {fileID: 0}
+  playerLook: {fileID: 0}
+  playerController: {fileID: 0}
   trigger:
   - {fileID: 2086935599}
   - {fileID: 2137984030}

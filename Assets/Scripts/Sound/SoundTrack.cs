@@ -85,7 +85,7 @@ public class SoundTrack : MonoBehaviour {
 
     void Update()
     {
-		Debug.Log(trackStack.Count);
+		//Debug.Log(trackStack.Count);
 		if (trackStack.Count == 0) {
 			trackStack.Push(audioSources[0].name);
 			Einreihen(audioSources[0].name);

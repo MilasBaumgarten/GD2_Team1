@@ -6,6 +6,7 @@ public class ShootProjectile : MonoBehaviour {
 
     public ProjectileScriptableObject projectile;
     public PlayerScriptableObject player;
+    public Animator animator;
 
 	private float nextFire = 0.0f;
     private int currentAmmo;
@@ -26,6 +27,10 @@ public class ShootProjectile : MonoBehaviour {
         {
             Fire();
         }
+        else
+        {
+            animator.ResetTrigger("Shoot");
+        }
 
         if (player.isGrounded && currentAmmo < projectile.maxAmmo)
         {
@@ -40,7 +45,8 @@ public class ShootProjectile : MonoBehaviour {
 
     void Fire()
     {
-		RaycastHit hit;
+        animator.SetTrigger("Shoot");
+        RaycastHit hit;
 		Ray shootDirection = new Ray(transform.position, transform.forward);    // sollte simpler sein als Input.mousePosition
 
 		// finde Zielpunkt der Rakete

@@ -23,6 +23,7 @@ MonoBehaviour:
   leftButton: 97
   jumpButton: 32
   grappleButton: 101
+  altGrappleButton: 324
   reelInButton: 304
   reelOutButton: 306
   allowNoClip: 1
@@ -33,15 +34,16 @@ MonoBehaviour:
   slowDownSpeed: 40
   airControlSpeed: 3
   maxGrappleDistance: 35
-  grappleDistance: 27.983803
+  grappleDistance: 20.450901
   reelInSpeed: 0.25
   grappleSpeed: 50
   isGrappling: 0
   isAttached: 0
   handDetached: 0
+  isGrounded: 0
   noClip: 0
   noClipSpeed: 20
   noClipSprintMultiplier: 2
   grappleTarget: {fileID: 0}
   grappleIndicator: {fileID: 0}
-  anchorPosition: {x: -89.11813, y: 25.499, z: -56.9768}
+  anchorPosition: {x: 295.595, y: 40.025337, z: 133.74}
