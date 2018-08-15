@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Szenen/Wueste_Main.unity
-    guid: 2a61f8df2f4f8c8499bc19e44051540f
+    path: Assets/Szenen/MainMenu.unity
+    guid: 7325ebb8655073941b3a1dd625590113
+  - enabled: 1
+    path: Assets/Szenen/Windturm.unity
+    guid: ed9b13c104e769548aa4868541ae17a3
   - enabled: 1
     path: Assets/Szenen/Erdturm.unity
     guid: 88285d2bd97ccc843abca45f6ba5eccc
@@ -18,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Szenen/Wasserturm.unity
     guid: 270c16a9e88320c4f9f4e35b39d8e661
   - enabled: 1
-    path: Assets/Szenen/Windturm.unity
-    guid: ed9b13c104e769548aa4868541ae17a3
+    path: Assets/Szenen/Wueste_Main.unity
+    guid: e05bc90811856d1429ef00d8d84cf7c7
   - enabled: 1
     path: Assets/Szenen/Zeitturm.unity
     guid: b9dd685d107dc2247bee964b0b584bd5
@@ -35,3 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Szenen/Dekoszene/Deko Zeitturm.unity
     guid: 3131317bd82357e4090061040f07f943
+  - enabled: 1
+    path: Assets/Szenen/Dekoszene/Deko Wueste.unity
+    guid: 63525ce19c575634cb4594c0f3afdd7a

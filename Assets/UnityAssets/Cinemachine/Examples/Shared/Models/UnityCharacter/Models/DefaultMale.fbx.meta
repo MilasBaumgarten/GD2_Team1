@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 8837f192a88abd84da9f1907d0b6bdb4
-timeCreated: 1500891250
-licenseType: Store
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -149,6 +147,8 @@ ModelImporter:
     400138: Skeleton
     400140: Spine
     400142: UpperChest
+    2300000: Body
+    3300000: Body
     4300000: Body
     9500000: //RootNode
     13700000: Body
@@ -159,7 +159,7 @@ ModelImporter:
       name: DefaultMale_Mat
     second: {fileID: 2100000, guid: d7f8b496adee38e4a9edc877d5939f5b, type: 2}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 1
     materialSearch: 2
     materialLocation: 0
@@ -1031,7 +1031,7 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 3
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
