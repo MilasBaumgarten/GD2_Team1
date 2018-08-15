@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 114421709001623100}
   - component: {fileID: 143999573106320020}
   - component: {fileID: 114660801661165858}
+  - component: {fileID: 114176980246077030}
   - component: {fileID: 120014841081231012}
   m_Layer: 8
   m_Name: Player
@@ -709,6 +710,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 11400000, guid: 5172b3c37ea212041a39338141847a35, type: 2}
+--- !u!114 &114176980246077030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1641677196015894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7136279a4aedc34c886ecd3b0676140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114421709001623100
 MonoBehaviour:
   m_ObjectHideFlags: 1
